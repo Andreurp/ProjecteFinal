@@ -1,0 +1,14 @@
+[
+  {
+    "model": "components.Tipus_Component",
+    "fields":{
+      "nom": "placa base"
+    }
+  },
+  {
+    "model": "components.Tipus_Component",
+    "fields":{
+      "nom": "Disc dur"
+    }
+  }
+]
