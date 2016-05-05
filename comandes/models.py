@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 class Linia(models.Model):
     id_Linia = models.AutoField(primary_key=True)
     id_comanda = models.ForeignKey('Comanda')
-    id_component = models.ForeignKey('Component')
+    id_component = models.ForeignKey('components.Component')
     quantitat = models.IntegerField()
     descompte = models.DecimalField(max_digits=4, decimal_places=1, default=0, help_text="descompte")
 

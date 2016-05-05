@@ -2,13 +2,55 @@
   {
     "model": "components.Tipus_Component",
     "fields":{
-      "nom": "placa base"
+      "nom": "Placa base"
     }
   },
   {
     "model": "components.Tipus_Component",
     "fields":{
       "nom": "Disc dur"
+    }
+  },
+  {
+    "model": "components.Tipus_Component",
+    "fields":{
+      "nom": "Mamoria RAM"
+    }
+  },
+  {
+    "model": "components.Tipus_Component",
+    "fields":{
+      "nom": "CPU"
+    }
+  },
+  {
+    "model": "components.Tipus_Component",
+    "fields":{
+      "nom": "Font d'alimentació"
+    }
+  },
+  {
+    "model": "components.Tipus_Component",
+    "fields":{
+      "nom": "Grafica"
+    }
+  },
+  {
+    "model": "components.Tipus_Component",
+    "fields":{
+      "nom": "Lector CD/DVD"
+    }
+  },
+  {
+    "model": "components.Tipus_Component",
+    "fields":{
+      "nom": "Refrigeració"
+    }
+  },
+  {
+    "model": "components.Tipus_Component",
+    "fields":{
+      "nom": "Caixes"
     }
   }
 ]
