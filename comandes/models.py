@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Linia(models.Model):
-    id_Linia = models.AutoField(primary_key=True)
+    id_linia = models.AutoField(primary_key=True)
     id_comanda = models.ForeignKey('Comanda')
     id_producte = models.ForeignKey('productes.Producte')
     quantitat = models.IntegerField()
