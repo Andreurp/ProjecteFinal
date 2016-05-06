@@ -3,7 +3,6 @@ from django.shortcuts import render
 
 # Create your views here.
 
-
 from django.core.urlresolvers import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse, HttpResponseRedirect
@@ -37,11 +36,11 @@ def registrar(request):
         form = RegistForm()
 
     form.helper = FormHelper()
-    form.helper.form_class = 'form-horizontal'
+    form.helper.form_class = 'form-horizontal col-md-8 col-md-offset-2'
     form.helper.label_class = 'col-lg-2'
     form.helper.field_class = 'col-lg-10'
     form.helper.add_input(Submit('submit', 'Enviar'))
-    return render(request, 'formulari.html', { 'form': form })
+    return render(request, 'formulari.html', { 'form': form, 'titol':"Registar",'h1':"Registar" })
 
 def vista_login(request):
     if request.method=='POST': #SI LO ENVIADO ES UN POST...

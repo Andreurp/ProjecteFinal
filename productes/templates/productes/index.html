@@ -1,5 +1,5 @@
 {%extends 'base.html' %}
-{%block titol%}<span>Cartes</span>{%endblock titol%}
+{%block titol%}<span xmlns="http://www.w3.org/1999/html">Cartes</span>{%endblock titol%}
 {%block content%}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://bootswatch.com/slate/bootstrap.min.css"></script>
@@ -8,6 +8,7 @@
         <div class="row">
             <span class="pull-left"><a type="button" class="btn btn-info btn-lg text-right" href="{% url 'producte:introduir_producte'%}"><span class="glyphicon glyphicon-plus"></span> Nou produte</a></span>
         </div>
+        </br>
         <div>
             {% if productes %}
             <div class="row">
@@ -17,8 +18,11 @@
                         <img src="{{producte.imatge.url}}">
                         <div class="caption">
                             <h3 class="bg-primary">{{ producte.nom }}</h3>
-                            <p>Marca: {{producte.marca}}</p>
-                            <p>Marca: {{producte.caracteristiques}}</p>
+                            <h4>Preu: {{producte.preu}} € </h4>
+                            <div class="butons">
+                                <a class="btn btn-primary" role="button" href="{% url 'producte:editar_producte' producte.id_producte %}"><span class="glyphicon glyphicon-pencil"></span> Editar</a></span>
+                                <a id="eliminar_producte" class="btn btn-danger" role="button" href="{% url 'producte:eliminar_producte' producte.id_producte %}"><span class="glyphicon glyphicon-trash"></span> Eliminar</a></span>
+                            </div>
                         </div>
                     </div>
                 </div>

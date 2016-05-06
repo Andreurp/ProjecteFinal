@@ -6,6 +6,17 @@
         <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
         <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css" crossorigin="anonymous">
         <script src="https://bootswatch.com/assets/js/custom.js"></script>
+        <script>
+            $(document).ready(function() {
+                var time = setTimeout(eliminarAlertes, 5000);
+                function eliminarAlertes() {
+                    var alertes = $(".alertes").slideUp();
+                }
+                $(".navbar-nav").children().on("click", function(){
+                    $(this).addClass("active");
+                })
+            });
+        </script>
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -38,6 +49,11 @@
         </nav>
 
         <div class="container" style="padding-top: 70px;">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alertes alert-{{ message.tags }} " role="alert">{{message}}</div>
+                {% endfor %}
+            {% endif %}
             <div class="jumbotron">
                 <h1>{{h1|default:"Productes"}}</h1>
             </div>

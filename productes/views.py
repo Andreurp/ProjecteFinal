@@ -1,4 +1,6 @@
-# encoding: utf-8
+# -*- coding: utf-8 -*-
+
+from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.http import HttpResponseRedirect
@@ -27,9 +29,9 @@ def intro_edit_producte(request, id_producte=None):
         if form.is_valid():
             producte = form.save()
             if(es_modificacio):
-                messages.add_message(request, messages.SUCCESS, 'La seva carta ha sigut modificat correctament')
+                messages.add_message(request, messages.SUCCESS, 'El producta ha sigut modificat correctament')
             else:
-                messages.add_message(request, messages.SUCCESS, 'la nova carta ha sigut creada ')
+                messages.add_message(request, messages.SUCCESS, 'El nou producta ha sigut creada ')
             return HttpResponseRedirect(reverse('producte:veure_productes'))
         else:
             if(es_modificacio):
@@ -40,8 +42,14 @@ def intro_edit_producte(request, id_producte=None):
         form = producteForm(instance=producte)
 
     form.helper = FormHelper()
-    form.helper.form_class = 'form-horizontal'
-    form.helper.label_class = 'col-md-6 col-md-offset-3'
-    form.helper.field_class = 'col-md-9'
+    form.helper.form_class = 'form-horizontal col-md-8 col-md-offset-2'
+    form.helper.label_class = 'col-lg-2'
+    form.helper.field_class = 'col-lg-10'
     form.helper.add_input(Submit('submit', 'Enviar'))
-    return render(request, 'formulari.html', {'form': form, 'producte':producte, 'h1':"Edita la teva carta"})
+    return render(request, 'formulari.html', {'form': form, 'producte':producte, 'h1':"Edita el producta"})
+
+def eliminar_producte(request, id_producte):
+    producte = get_object_or_404(Producte, pk=id_producte)
+    messages.add_message(request, messages.SUCCESS,'El producta ha sigut eliminada correctament')
+    producte.delete()
+    return HttpResponseRedirect(reverse('producte:veure_productes') )
