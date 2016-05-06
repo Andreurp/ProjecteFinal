@@ -1,3 +1,4 @@
+# encoding: utf-8
 from __future__ import unicode_literals
 
 from django.db import models
@@ -7,9 +8,13 @@ class Tipus_Producte(models.Model):
     id = models.AutoField(primary_key=True)
     nom = models.CharField(max_length=100)
 
+    def __str__(self):
+        return '%s' % (self.nom)
+
 class Marca_Producte(models.Model):
     id = models.AutoField(primary_key=True)
     nom = models.CharField(max_length=100)
+
 
 class Producte(models.Model):
     id_producte = models.IntegerField(primary_key=True)
