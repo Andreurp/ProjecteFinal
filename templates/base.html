@@ -24,6 +24,15 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{% url 'producte:veure_productes' %}">Productes <span class="sr-only">(current)</span></a></li>
                     </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'sortir' %}">Sortir</a></li>
+                        {% else %}
+                            <li><a href="{% url 'login' %}">Connectar-se</a></li>
+                            <li><a href="{% url 'registrar' %}">Registrar-se</a></li>
+                        {% endif %}
+                      </ul>
                 </div>
             </div>
         </nav>
