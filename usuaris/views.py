@@ -1,8 +1,9 @@
+# encoding: utf-8
 from django.shortcuts import render
 
 # Create your views here.
 
-# -*- coding: utf-8 -*-
+
 from django.core.urlresolvers import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse, HttpResponseRedirect
@@ -58,7 +59,7 @@ def vista_login(request):
                         return HttpResponseRedirect( seguent ) #Rediridige al usuario donde queria ir
                     else:
                         messages.success(request, 'Benvingut ' + username + '!')
-                        return HttpResponseRedirect( reverse( 'baralla:veurebaralles' )  )  #Lo envias a la pagina que tu quieras
+                        return HttpResponseRedirect( reverse( 'producte:veure_productes' )  )  #Lo envias a la pagina que tu quieras
                 else: #Error en el usuario, no esta activo
                     return HttpResponse("Usuari correcte pero no actiu")
             else: #El usuario no es correcto

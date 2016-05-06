@@ -25,9 +25,9 @@ urlpatterns = ([
     url(r'^admin/', admin.site.urls),
     url(r'^', include('productes.urls', namespace='producte')),
 
-   url(r'^login/', vista_usuaris.vista_login, name="login"),
-   url(r'^registrar/', vista_usuaris.registrar, name="registrar"),
-   url(r'^sortir/', vista_usuaris.logout_view, name="sortir"),
+    url(r'^login/', vista_usuaris.vista_login, name="login"),
+    url(r'^registrar/', vista_usuaris.registrar, name="registrar"),
+    url(r'^sortir/', vista_usuaris.logout_view, name="sortir"),
 ]
 
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
