@@ -12,7 +12,7 @@ class Linia(models.Model):
     id_comanda = models.ForeignKey('Comanda')
     id_producte = models.ForeignKey('productes.Producte')
     quantitat = models.IntegerField()
-    descompte = models.DecimalField(max_digits=4, decimal_places=1, default=0, help_text="descompte")
+    descompte = models.DecimalField(max_digits=4, decimal_places=1, default=0, null=True, blank=True, help_text="descompte")
 
 class Comanda(models.Model):
     num_comanda = models.AutoField(primary_key=True)

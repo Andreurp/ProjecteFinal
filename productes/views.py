@@ -10,9 +10,11 @@ from django.core.urlresolvers import reverse
 from django.forms import modelform_factory
 from django.contrib import messages
 
-from productes.models import Producte
+from productes.models import Producte, Tipus_Producte
 
 # Create your views here.
+# pruductes
+
 def veure_productes(request):
     productes = Producte.objects.all()
     return render(request, 'productes/index.html', {'productes': productes, 'h1':"Productes"})
@@ -53,3 +55,9 @@ def eliminar_producte(request, id_producte):
     messages.add_message(request, messages.SUCCESS,'El producta ha sigut eliminada correctament')
     producte.delete()
     return HttpResponseRedirect(reverse('producte:veure_productes') )
+
+#Tipus
+
+def veure_tipus(request):
+    tipus = Tipus_Producte.objects.all()
+    return render(request, 'productes/index.html', {'productes': tipus})
