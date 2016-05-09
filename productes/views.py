@@ -3,7 +3,6 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
-from django.http import HttpResponseRedirect
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from django.core.urlresolvers import reverse
@@ -17,13 +16,14 @@ from productes.models import Producte, Tipus_Producte
 
 def veure_productes(request):
     productes = Producte.objects.all()
-    return render(request, 'productes/index.html', {'productes': productes, 'h1':"Productes"})
+    tipus = Tipus_Producte.objects.all()
+    return render(request, 'productes/index.html', {'productes': productes,'tipus': tipus})
 
 def intro_edit_producte(request, id_producte=None):
     es_modificacio =(id_producte!=None)
     producteForm =modelform_factory(Producte, exclude=())
     if es_modificacio:
-        producte = get_object_or_404(Producte, id=id_producte)
+        producte = get_object_or_404(Producte, id_producte=id_producte)
     else:
         producte=Producte()
     if request.method == 'POST':
@@ -31,24 +31,24 @@ def intro_edit_producte(request, id_producte=None):
         if form.is_valid():
             producte = form.save()
             if(es_modificacio):
-                messages.add_message(request, messages.SUCCESS, 'El producta ha sigut modificat correctament')
+                messages.add_message(request, messages.SUCCESS, 'El producte ha sigut modificat correctament')
             else:
-                messages.add_message(request, messages.SUCCESS, 'El nou producta ha sigut creada ')
+                messages.add_message(request, messages.SUCCESS, 'El nou producte ha sigut creat correctament')
             return HttpResponseRedirect(reverse('producte:veure_productes'))
         else:
             if(es_modificacio):
-                messages.add_message(request, messages.ERROR, 'Error en modificar la carta')
+                messages.add_message(request, messages.ERROR, 'Error en modificar el producte')
             else:
-                messages.add_message(request, messages.ERROR, 'Error en crear la carta nova')
+                messages.add_message(request, messages.ERROR, 'Error en crear el producte nova')
     else:
         form = producteForm(instance=producte)
 
     form.helper = FormHelper()
     form.helper.form_class = 'form-horizontal col-md-8 col-md-offset-2'
-    form.helper.label_class = 'col-lg-2'
-    form.helper.field_class = 'col-lg-10'
+    form.helper.label_class = 'col-lg-3'
+    form.helper.field_class = 'col-lg-9'
     form.helper.add_input(Submit('submit', 'Enviar'))
-    return render(request, 'formulari.html', {'form': form, 'producte':producte, 'h1':"Edita el producta"})
+    return render(request, 'formulari.html', {'form': form, 'producte':producte})
 
 def eliminar_producte(request, id_producte):
     producte = get_object_or_404(Producte, pk=id_producte)
@@ -56,8 +56,8 @@ def eliminar_producte(request, id_producte):
     producte.delete()
     return HttpResponseRedirect(reverse('producte:veure_productes') )
 
-#Tipus
+#Tipus_admin
 
 def veure_tipus(request):
     tipus = Tipus_Producte.objects.all()
-    return render(request, 'productes/index.html', {'productes': tipus})
+    return render(request, 'productes/index.html', {'tipus': tipus})

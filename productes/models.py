@@ -27,5 +27,5 @@ class Producte(models.Model):
     caracteristiques = models.TextField(null=True, blank=True)
     restriccio = models.TextField(null=True, blank=True)
     imatge = models.ImageField(max_length=200, upload_to='productes')
-    preu = models.DecimalField(max_digits=7,decimal_places=2, help_text="preu producte")
+    preu = models.DecimalField(max_digits=7,decimal_places=2)
     stock = models.IntegerField()
