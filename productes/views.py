@@ -8,6 +8,7 @@ from crispy_forms.layout import Submit
 from django.core.urlresolvers import reverse
 from django.forms import modelform_factory
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from productes.models import Producte, Tipus_Producte
 
@@ -19,6 +20,7 @@ def veure_productes(request):
     tipus = Tipus_Producte.objects.all()
     return render(request, 'productes/index.html', {'productes': productes,'tipus': tipus})
 
+@login_required
 def intro_edit_producte(request, id_producte=None):
     es_modificacio =(id_producte!=None)
     producteForm =modelform_factory(Producte, exclude=())
@@ -50,6 +52,7 @@ def intro_edit_producte(request, id_producte=None):
     form.helper.add_input(Submit('submit', 'Enviar'))
     return render(request, 'formulari.html', {'form': form, 'producte':producte})
 
+@login_required
 def eliminar_producte(request, id_producte):
     producte = get_object_or_404(Producte, pk=id_producte)
     messages.add_message(request, messages.SUCCESS,'El producta ha sigut eliminada correctament')
@@ -58,6 +61,7 @@ def eliminar_producte(request, id_producte):
 
 #Tipus_admin
 
+@login_required
 def veure_tipus(request):
     tipus = Tipus_Producte.objects.all()
     return render(request, 'productes/index.html', {'tipus': tipus})
