@@ -42,6 +42,10 @@
                                 {% endfor %}
                             </ul>
                         </li>
+                        {% ifequal user.username "admin" %}
+                            <li><a href="{% url 'producte:veure_tipus' %}">Llista tipus<span class="sr-only">(current)</span></a></li>
+                            <li><a href="{% url 'producte:veure_marcas' %}">Llista marcas<span class="sr-only">(current)</span></a></li>
+                        {% endifequal %}
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">

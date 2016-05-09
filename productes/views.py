@@ -10,7 +10,7 @@ from django.forms import modelform_factory
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-from productes.models import Producte, Tipus_Producte
+from productes.models import Producte, Tipus_Producte, Marca_Producte
 
 # Create your views here.
 # pruductes
@@ -18,10 +18,11 @@ from productes.models import Producte, Tipus_Producte
 def veure_productes(request):
     productes = Producte.objects.all()
     tipus = Tipus_Producte.objects.all()
-    return render(request, 'productes/index.html', {'productes': productes,'tipus': tipus})
+    return render(request, 'productes/index.html', {'productes': productes, 'tipus': tipus})
 
 @login_required
 def intro_edit_producte(request, id_producte=None):
+    tipus = Tipus_Producte.objects.all()
     es_modificacio =(id_producte!=None)
     producteForm =modelform_factory(Producte, exclude=())
     if es_modificacio:
@@ -50,7 +51,7 @@ def intro_edit_producte(request, id_producte=None):
     form.helper.label_class = 'col-lg-3'
     form.helper.field_class = 'col-lg-9'
     form.helper.add_input(Submit('submit', 'Enviar'))
-    return render(request, 'formulari.html', {'form': form, 'producte':producte})
+    return render(request, 'formulari.html', {'form': form, 'producte':producte, 'tipus': tipus})
 
 @login_required
 def eliminar_producte(request, id_producte):
@@ -64,4 +65,12 @@ def eliminar_producte(request, id_producte):
 @login_required
 def veure_tipus(request):
     tipus = Tipus_Producte.objects.all()
-    return render(request, 'productes/index.html', {'tipus': tipus})
+    return render(request, 'tipus/index.html', {'tipus': tipus})
+
+
+#Marcas_admin
+
+@login_required
+def veure_marcas(request):
+    marcas = Marca_Producte.objects.all()
+    return render(request, 'marcas/index.html', {'marca': marcas})

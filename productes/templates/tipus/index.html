@@ -1,0 +1,30 @@
+{%extends 'base.html' %}
+{%block titol%}<span xmlns="http://www.w3.org/1999/html">Tipus</span>{%endblock titol%}
+{%block content%}
+    <div class="container">
+
+        <br/>
+        {% if tipus %}
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tipu in tipus %}
+                    <tr>
+                        <td> {{ tipu.id }}</td>
+                        <td> {{ tipu.nom }}</td>
+
+                    </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No hi han tipus</p>
+        {% endif %}
+    </div>
+{%endblock%}
