@@ -2,9 +2,11 @@
 {%block titol%}<span xmlns="http://www.w3.org/1999/html">Productes</span>{%endblock titol%}
 {%block content%}
     <div class="container">
-        <div class="row">
-            <span class="pull-left"><a type="button" class="btn btn-info btn-lg text-right" href="{% url 'producte:introduir_producte'%}"><span class="glyphicon glyphicon-plus"></span> Nou produte</a></span>
-        </div>
+        {% ifequal user.username "admin" %}
+            <div class="row">
+                <span class="pull-left"><a type="button" class="btn btn-info btn-lg text-right" href="{% url 'producte:introduir_producte'%}"><span class="glyphicon glyphicon-plus"></span> Nou produte</a></span>
+            </div>
+        {% endifequal %}
         </br>
         <div>
             {% if productes %}
@@ -18,10 +20,12 @@
                             <div class="caption">
                                 <h3 class="bg-primary">{{ producte.nom }}</h3>
                                 <h4>Preu: {{producte.preu}} € </h4>
-                                <div class="butons">
-                                    <a class="btn btn-primary" role="button" href="{% url 'producte:editar_producte' producte.id_producte %}"><span class="glyphicon glyphicon-pencil"></span> Editar</a></span>
-                                    <a id="eliminar_producte" class="btn btn-danger" role="button" href="{% url 'producte:eliminar_producte' producte.id_producte %}"><span class="glyphicon glyphicon-trash"></span> Eliminar</a></span>
-                                </div>
+                                {% ifequal user.username "admin" %}
+                                    <div class="butons">
+                                        <a class="btn btn-primary" role="button" href="{% url 'producte:editar_producte' producte.id_producte %}"><span class="glyphicon glyphicon-pencil"></span> Editar</a></span>
+                                        <a id="eliminar_producte" class="btn btn-danger" role="button" href="{% url 'producte:eliminar_producte' producte.id_producte %}"><span class="glyphicon glyphicon-trash"></span> Eliminar</a></span>
+                                    </div>
+                                {% endifequal %}
                             </div>
                         </div>
                     </div>
