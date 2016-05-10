@@ -20,7 +20,7 @@ class Marca_Producte(models.Model):
         return '%s' % (self.nom)
 
 class Producte(models.Model):
-    id_producte = models.IntegerField(primary_key=True)
+    id_producte = models.AutoField(primary_key=True)
     nom = models.CharField(max_length=200)
     marca = models.ForeignKey('Marca_Producte')
     tipus = models.ForeignKey('Tipus_Producte')

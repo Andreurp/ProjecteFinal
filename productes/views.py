@@ -68,6 +68,38 @@ def veure_tipus(request):
     tipus = Tipus_Producte.objects.all()
     return render(request, 'tipus/index.html', {'tipus': tipus})
 
+@login_required
+def intro_edit_tipus(request, id_tipus=None):
+    es_modificacio =(id_tipus!=None)
+    tipusForm =modelform_factory(Tipus_Producte, exclude=())
+    if es_modificacio:
+        tipus = get_object_or_404(Tipus_Producte, id=id_tipus)
+    else:
+        tipus=Tipus_Producte()
+    if request.method == 'POST':
+        form = tipusForm(request.POST,instance=tipus)
+        if form.is_valid():
+            tipus = form.save()
+            if(es_modificacio):
+                messages.add_message(request, messages.SUCCESS, 'El tipus ha sigut modificat correctament')
+            else:
+                messages.add_message(request, messages.SUCCESS, 'El nou tipus ha sigut creat correctament')
+            return HttpResponseRedirect(reverse('producte:veure_tipus'))
+        else:
+            if(es_modificacio):
+                messages.add_message(request, messages.ERROR, 'Error en modificar el tipus')
+            else:
+                messages.add_message(request, messages.ERROR, 'Error en crear el tupus nova')
+    else:
+        form = tipusForm(instance=tipus)
+
+    form.helper = FormHelper()
+    form.helper.form_class = 'form-horizontal col-md-8 col-md-offset-2'
+    form.helper.label_class = 'col-lg-3'
+    form.helper.field_class = 'col-lg-9'
+    form.helper.add_input(Submit('submit', 'Enviar'))
+    return render(request, 'formulari.html', {'form': form, 'tipus': tipus})
+
 
 #Marcas_admin
 

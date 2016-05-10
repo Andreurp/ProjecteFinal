@@ -2,14 +2,19 @@
 {%block titol%}<span xmlns="http://www.w3.org/1999/html">Marques</span>{%endblock titol%}
 {%block content%}
     <div class="container">
-
+        {% ifequal user.username "admin" %}
+            <div class="row">
+                <span class="pull-left"><a type="button" class="btn btn-info btn-lg text-right" href=""><span class="glyphicon glyphicon-plus"></span> Nova marca</a></span>
+            </div>
+        {% endifequal %}
+        <br/>
         {% if marcas %}
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Nom</th>
-                        <th>Opciones</th>
+                        <th>Opcions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -17,7 +22,12 @@
                     <tr>
                         <td> {{ marca.id }}</td>
                         <td> {{ marca.nom }}</td>
-
+                        {% ifequal user.username "admin" %}
+                            <td>
+                                <a class="btn btn-primary" role="button" href=""><span class="glyphicon glyphicon-pencil"></span> Editar</a>
+                                <a class="btn btn-danger" role="button" href=""><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
+                            </td>
+                        {% endifequal %}
                     </tr>
                         {% endfor %}
                 </tbody>
