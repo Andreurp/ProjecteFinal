@@ -9,6 +9,7 @@ from usuaris import views as vista_usuaris
 urlpatterns = ([
     url(r'^admin/', admin.site.urls),
     url(r'^', include('productes.urls', namespace='producte')),
+    url(r'^', include('comandes.urls', namespace='comande')),
 
     url(r'^login/', vista_usuaris.vista_login, name="login"),
     url(r'^registrar/', vista_usuaris.registrar, name="registrar"),
