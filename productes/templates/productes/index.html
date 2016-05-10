@@ -21,7 +21,7 @@
                                 <h3 class="bg-primary">{{ producte.nom }}</h3>
                                 <h4>Preu: {{producte.preu}} € </h4>
                                 {% ifequal user.username "admin" %}
-                                    <div class="butons">
+                                    <div class="butons btn-group">
                                         <a class="btn btn-primary" role="button" href="{% url 'producte:editar_producte' producte.id_producte %}"><span class="glyphicon glyphicon-pencil"></span> Editar</a></span>
                                         <a id="eliminar_producte" class="btn btn-danger" role="button" href="{% url 'producte:eliminar_producte' producte.id_producte %}"><span class="glyphicon glyphicon-trash"></span> Eliminar</a></span>
                                     </div>

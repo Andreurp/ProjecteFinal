@@ -24,8 +24,10 @@
                         <td> {{ tipu.nom }}</td>
                         {% ifequal user.username "admin" %}
                             <td>
-                                <a class="btn btn-primary" role="button" href="{% url 'producte:editar_tipus' tipu.id %}"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
-                                <a class="btn btn-danger" role="button" href="{% url 'producte:eliminar_tipus' tipu.id %}"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
+                                <div class="btn-group">
+                                    <a class="btn btn-primary" role="button" href="{% url 'producte:editar_tipus' tipu.id %}"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
+                                    <a class="btn btn-danger" role="button" href="{% url 'producte:eliminar_tipus' tipu.id %}"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
+                                </div>
                             </td>
                         {% endifequal %}
                     </tr>
