@@ -2,13 +2,14 @@
 
 from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseRedirect
+from django.http import *
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from django.core.urlresolvers import reverse
 from django.forms import modelform_factory
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+
 
 from productes.models import Producte, Tipus_Producte, Marca_Producte
 
@@ -73,4 +74,18 @@ def veure_tipus(request):
 @login_required
 def veure_marcas(request):
     marcas = Marca_Producte.objects.all()
-    return render(request, 'marcas/index.html', {'marca': marcas})
+    return render(request, 'marcas/index.html', {'marcas': marcas})
+
+#carreo compre
+
+def update_session(request, id_producte):
+    #if not request.is_ajax() or not request.method=='POST':
+     #   return HttpResponseNotAllowed(['POST'])
+
+    if 'carro' not in request.session:
+        request.session['carro'] =[id_producte,1]
+    else:
+        request.session['carro'] += [id_producte,1]
+
+    messages.add_message(request, messages.SUCCESS, 'El producte ha sigut afegit correctament')
+    return HttpResponseRedirect(reverse('producte:veure_productes') )

@@ -10,7 +10,7 @@ class Tipus_Producte(models.Model):
     nom = models.CharField(max_length=100)
 
     def __str__(self):
-        return '%s' % (self.nom)
+        return unicode('%s' % (self.nom))
 
 class Marca_Producte(models.Model):
     id = models.AutoField(primary_key=True)

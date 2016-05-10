@@ -4,7 +4,7 @@
     <div class="container">
         {% ifequal user.username "admin" %}
             <div class="row">
-                <span class="pull-left"><a type="button" class="btn btn-info btn-lg text-right" href="{% url 'producte:introduir_producte'%}"><span class="glyphicon glyphicon-plus"></span> Nou produte</a></span>
+                <span class="pull-left"><a type="button" class="btn btn-info btn-lg text-right" href="{% url 'producte:introduir_producte'%}"><span class="glyphicon glyphicon-plus"></span> Nou producte</a></span>
             </div>
         {% endifequal %}
         <br/>
@@ -12,7 +12,7 @@
             {% if productes %}
             <div class="row">
                 {% for producte in productes %}
-                    <div class="producte col-xs-12 col-sm-6 col-md-3">
+                    <div class="producte col-xs-12 col-sm-6 col-md-3" ng-repeat="producte in  productes | filter:BuscarTipus">
                         <div class="thumbnail">
                             <div style="min-height: 150px">
                                 <img class="img-responsive" style="height: 142px; width: 100%" src="{{producte.imatge.url}}">
@@ -24,6 +24,10 @@
                                     <div class="butons">
                                         <a class="btn btn-primary" role="button" href="{% url 'producte:editar_producte' producte.id_producte %}"><span class="glyphicon glyphicon-pencil"></span> Editar</a></span>
                                         <a id="eliminar_producte" class="btn btn-danger" role="button" href="{% url 'producte:eliminar_producte' producte.id_producte %}"><span class="glyphicon glyphicon-trash"></span> Eliminar</a></span>
+                                    </div>
+                                {% else %}
+                                    <div class="butons">
+                                        <a class="btn btn-warning" role="button" href="{% url 'producte:update_session' producte.id_producte %}"><span class="glyphicon glyphicon-shopping-cart"></span> Afegir producte</a></span>
                                     </div>
                                 {% endifequal %}
                             </div>

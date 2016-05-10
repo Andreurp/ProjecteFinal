@@ -13,4 +13,6 @@ urlpatterns = [
     url(r'^tipus/$', views.veure_tipus, name='veure_tipus'),
 
     url(r'^marcas/$', views.veure_marcas, name='veure_marcas'),
+
+    url(r'^update_session/(?P<id_producte>[0-9]+)/$', views.update_session, name='update_session'),
 ]
