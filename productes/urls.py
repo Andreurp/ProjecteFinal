@@ -12,7 +12,8 @@ urlpatterns = [
 
     url(r'^tipus/$', views.veure_tipus, name='veure_tipus'),
     url(r'^tipus/introduir_tipus/$', views.intro_edit_tipus, name='introduir_tipus'),
-
+    url(r'^tipus/editar_tipus/(?P<id_tipus>[0-9]+)/$', views.intro_edit_tipus, name='editar_tipus'),
+    url(r'^tipus/eliminar_tipus/(?P<id_tipus>[0-9]+)/$', views.eliminar_tipus, name='eliminar_tipus'),
 
     url(r'^marcas/$', views.veure_marcas, name='veure_marcas'),
 

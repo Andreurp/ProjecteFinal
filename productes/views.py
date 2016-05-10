@@ -43,7 +43,7 @@ def intro_edit_producte(request, id_producte=None):
             if(es_modificacio):
                 messages.add_message(request, messages.ERROR, 'Error en modificar el producte')
             else:
-                messages.add_message(request, messages.ERROR, 'Error en crear el producte nova')
+                messages.add_message(request, messages.ERROR, 'Error en crear el producte nou')
     else:
         form = producteForm(instance=producte)
 
@@ -81,15 +81,15 @@ def intro_edit_tipus(request, id_tipus=None):
         if form.is_valid():
             tipus = form.save()
             if(es_modificacio):
-                messages.add_message(request, messages.SUCCESS, 'El tipus ha sigut modificat correctament')
+                messages.add_message(request, messages.SUCCESS, 'El tipu ha sigut modificat correctament')
             else:
-                messages.add_message(request, messages.SUCCESS, 'El nou tipus ha sigut creat correctament')
+                messages.add_message(request, messages.SUCCESS, 'El nou tipu ha sigut creat correctament')
             return HttpResponseRedirect(reverse('producte:veure_tipus'))
         else:
             if(es_modificacio):
-                messages.add_message(request, messages.ERROR, 'Error en modificar el tipus')
+                messages.add_message(request, messages.ERROR, 'Error en modificar el tipu')
             else:
-                messages.add_message(request, messages.ERROR, 'Error en crear el tupus nova')
+                messages.add_message(request, messages.ERROR, 'Error en crear el tupu nou')
     else:
         form = tipusForm(instance=tipus)
 
@@ -98,17 +98,24 @@ def intro_edit_tipus(request, id_tipus=None):
     form.helper.label_class = 'col-lg-3'
     form.helper.field_class = 'col-lg-9'
     form.helper.add_input(Submit('submit', 'Enviar'))
-    return render(request, 'formulari.html', {'form': form, 'tipus': tipus})
+    return render(request, 'formulari.html', {'form': form, 'tipu': tipus})
 
+@login_required
+def eliminar_tipus(request, id_tipus):
+    tipu = get_object_or_404(Tipus_Producte, pk=id_tipus)
+    messages.add_message(request, messages.SUCCESS,'El tipu ha sigut eliminada correctament')
+    tipu.delete()
+    return HttpResponseRedirect(reverse('producte:veure_tipus') )
 
 #Marcas_admin
 
 @login_required
 def veure_marcas(request):
+    tipus = Tipus_Producte.objects.all()
     marcas = Marca_Producte.objects.all()
-    return render(request, 'marcas/index.html', {'marcas': marcas})
+    return render(request, 'marcas/index.html', {'marcas': marcas, 'tipus': tipus})
 
-#carreo compre
+#carro compre
 
 def update_session(request, id_producte):
     #if not request.is_ajax() or not request.method=='POST':
