@@ -61,6 +61,11 @@ def eliminar_producte(request, id_producte):
     producte.delete()
     return HttpResponseRedirect(reverse('producte:veure_productes') )
 
+def veure_detall(request, id_producte):
+    productes = get_object_or_404(Producte, pk=id_producte)
+    tipus = Tipus_Producte.objects.all()
+    return render(request, 'productes/detall.html', {'productes': productes, 'tipus': tipus})
+
 #Tipus_admin
 
 @login_required
