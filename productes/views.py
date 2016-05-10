@@ -57,7 +57,7 @@ def intro_edit_producte(request, id_producte=None):
 @login_required
 def eliminar_producte(request, id_producte):
     producte = get_object_or_404(Producte, pk=id_producte)
-    messages.add_message(request, messages.SUCCESS,'El producta ha sigut eliminada correctament')
+    messages.add_message(request, messages.SUCCESS,'El producta ha sigut eliminat correctament')
     producte.delete()
     return HttpResponseRedirect(reverse('producte:veure_productes') )
 
@@ -89,7 +89,7 @@ def intro_edit_tipus(request, id_tipus=None):
             if(es_modificacio):
                 messages.add_message(request, messages.ERROR, 'Error en modificar el tipu')
             else:
-                messages.add_message(request, messages.ERROR, 'Error en crear el tupu nou')
+                messages.add_message(request, messages.ERROR, 'Error en crear el tipu nou')
     else:
         form = tipusForm(instance=tipus)
 
@@ -103,7 +103,7 @@ def intro_edit_tipus(request, id_tipus=None):
 @login_required
 def eliminar_tipus(request, id_tipus):
     tipu = get_object_or_404(Tipus_Producte, pk=id_tipus)
-    messages.add_message(request, messages.SUCCESS,'El tipu ha sigut eliminada correctament')
+    messages.add_message(request, messages.SUCCESS,'El tipu ha sigut eliminat correctament')
     tipu.delete()
     return HttpResponseRedirect(reverse('producte:veure_tipus') )
 
@@ -114,6 +114,45 @@ def veure_marcas(request):
     tipus = Tipus_Producte.objects.all()
     marcas = Marca_Producte.objects.all()
     return render(request, 'marcas/index.html', {'marcas': marcas, 'tipus': tipus})
+
+@login_required
+def intro_edit_marca(request, id_marca=None):
+    es_modificacio =(id_marca!=None)
+    marcaForm =modelform_factory(Marca_Producte, exclude=())
+    if es_modificacio:
+        marca = get_object_or_404(Marca_Producte, id=id_marca)
+    else:
+        marca=Marca_Producte()
+    if request.method == 'POST':
+        form = marcaForm(request.POST,instance=marca)
+        if form.is_valid():
+            marca = form.save()
+            if(es_modificacio):
+                messages.add_message(request, messages.SUCCESS, 'La marca ha sigut modificada correctament')
+            else:
+                messages.add_message(request, messages.SUCCESS, 'La nova marca ha sigut creada correctament')
+            return HttpResponseRedirect(reverse('producte:veure_marcas'))
+        else:
+            if(es_modificacio):
+                messages.add_message(request, messages.ERROR, 'Error en modificar la marca')
+            else:
+                messages.add_message(request, messages.ERROR, 'Error en crear la marca nova')
+    else:
+        form = marcaForm(instance=marca)
+
+    form.helper = FormHelper()
+    form.helper.form_class = 'form-horizontal col-md-8 col-md-offset-2'
+    form.helper.label_class = 'col-lg-3'
+    form.helper.field_class = 'col-lg-9'
+    form.helper.add_input(Submit('submit', 'Enviar'))
+    return render(request, 'formulari.html', {'form': form, 'marca': marca})
+
+@login_required
+def eliminar_marca(request, id_marca):
+    marca = get_object_or_404(Marca_Producte, pk=id_marca)
+    messages.add_message(request, messages.SUCCESS,'La marca ha sigut eliminada correctament')
+    marca.delete()
+    return HttpResponseRedirect(reverse('producte:veure_marcas') )
 
 #carro compre
 
