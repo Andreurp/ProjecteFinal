@@ -2,6 +2,8 @@
 {%block titol%}<span xmlns="http://www.w3.org/1999/html">Detall</span>{%endblock titol%}
 {%block content%}
     <div class="container">
-
+        {% for comanda in comandes %}
+            <p>{{ comande.carro.id_producte }}</p>
+        {% endfor %}
     </div>
 {%endblock%}
