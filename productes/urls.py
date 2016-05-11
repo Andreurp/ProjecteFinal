@@ -20,6 +20,4 @@ urlpatterns = [
     url(r'^marcas/introduir_marca/$', views.intro_edit_marca, name='introduir_marca'),
     url(r'^marcas/editar_marca/(?P<id_marca>[0-9]+)/$', views.intro_edit_marca, name='editar_marca'),
     url(r'^marcas/eliminar_marca/(?P<id_marca>[0-9]+)/$', views.eliminar_marca, name='eliminar_marca'),
-
-    url(r'^update_session/(?P<id_producte>[0-9]+)/$', views.update_session, name='update_session'),
 ]

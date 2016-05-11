@@ -14,7 +14,7 @@ from django.contrib.auth.decorators import login_required
 from productes.models import Producte, Tipus_Producte, Marca_Producte
 
 # Create your views here.
-# pruductes
+# Productes
 
 def veure_productes(request):
     productes = Producte.objects.all()
@@ -62,9 +62,9 @@ def eliminar_producte(request, id_producte):
     return HttpResponseRedirect(reverse('producte:veure_productes') )
 
 def veure_detall(request, id_producte):
-    productes = get_object_or_404(Producte, pk=id_producte)
+    producte = get_object_or_404(Producte, pk=id_producte)
     tipus = Tipus_Producte.objects.all()
-    return render(request, 'productes/detall.html', {'productes': productes, 'tipus': tipus})
+    return render(request, 'productes/detall.html', {'producte': producte, 'tipus': tipus})
 
 #Tipus_admin
 
@@ -158,17 +158,3 @@ def eliminar_marca(request, id_marca):
     messages.add_message(request, messages.SUCCESS,'La marca ha sigut eliminada correctament')
     marca.delete()
     return HttpResponseRedirect(reverse('producte:veure_marcas') )
-
-#carro compre
-
-def update_session(request, id_producte):
-    #if not request.is_ajax() or not request.method=='POST':
-     #   return HttpResponseNotAllowed(['POST'])
-
-    if 'carro' not in request.session:
-        request.session['carro'] =[id_producte,1]
-    else:
-        request.session['carro'] += [id_producte,1]
-
-    messages.add_message(request, messages.SUCCESS, 'El producte ha sigut afegit correctament')
-    return HttpResponseRedirect(reverse('producte:veure_productes') )

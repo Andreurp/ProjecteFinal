@@ -12,14 +12,13 @@
             {% if productes %}
             <div class="row">
                 {% for producte in productes %}
-                    <div class="producte col-xs-12 col-sm-6 col-md-3" ng-repeat="producte in  productes | filter:BuscarTipus">
-                        <a href="{% url 'producte:veure_detall' producte.id_producte %}"></a>
+                    <div class="producte col-xs-12 col-sm-6 col-md-3">
                         <div class="thumbnail">
                             <div style="min-height: 150px">
                                 <img class="img-responsive" style="height: 142px; width: 100%" src="{{producte.imatge.url}}">
                             </div>
                             <div class="caption">
-                                <h3 class="bg-primary">{{ producte.nom }}</h3>
+                                <h3 class="bg-primary"><a href="{% url 'producte:veure_detall' producte.id_producte %}">{{ producte.nom }}</a></h3>
                                 <h4>Preu: {{producte.preu}} € </h4>
                                 {% ifequal user.username "admin" %}
                                     <div class="butons btn-group">
@@ -28,7 +27,7 @@
                                     </div>
                                 {% else %}
                                     <div class="butons">
-                                        <a class="btn btn-warning" role="button" href="{% url 'producte:update_session' producte.id_producte %}"><span class="glyphicon glyphicon-shopping-cart"></span> Afegir producte</a></span>
+                                        <a class="btn btn-warning" role="button" href="{% url 'comande:update_session' producte.id_producte %}"><span class="glyphicon glyphicon-shopping-cart"></span> Afegir producte</a></span>
                                     </div>
                                 {% endifequal %}
                             </div>
