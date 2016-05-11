@@ -23,6 +23,13 @@
                         <h4>Marca: {{producte.marca}} </h4>
                         <h4>Component: {{producte.tipus}} </h4>
                     </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="butons col-md-6 col-md-offset-3">
+                        <a class="btn btn-warning" role="button" href="{% url 'comande:update_session' producte.id_producte %}"><span class="glyphicon glyphicon-shopping-cart"></span> Afegir producte</a></span>
+                    </div>
                 </div>
             </div>
             {% else %}
@@ -39,12 +46,12 @@
                 <!-- Tab panes -->
                 <div class="tab-content">
                     {% if producte.caracteristiques %}
-                        <div role="tabpanel" class="tab-pane active" id="Caracteristiques">{{producte.caracteristiques}}</div>
+                        <div role="tabpanel" class="tab-pane active" id="Caracteristiques">{{producte.caracteristiques | linebreaksbr }}</div>
                     {% else %}
                         <div role="tabpanel" class="tab-pane active" id="Caracteristiques">No hi ha cap caracteristica d'aquest producte</div>
                     {% endif %}
                     {% if producte.restriccio %}
-                        <div role="tabpanel" class="tab-pane" id="Restriccions">Restriccions {{producte.restriccio}}</div>
+                        <div role="tabpanel" class="tab-pane" id="Restriccions">Restriccions {{producte.restriccio | linebreaksbr }}</div>
                     {% else %}
                         <div role="tabpanel" class="tab-pane" id="Restriccions">No hi ha cap restricció d'aquest producte</div>
                     {% endif %}

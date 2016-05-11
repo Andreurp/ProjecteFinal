@@ -16,6 +16,8 @@ def update_session(request, id_producte):
     messages.add_message(request, messages.SUCCESS, 'El producte ha sigut afegit correctament')
     return HttpResponseRedirect(reverse('producte:veure_productes') )
 
+#Comandes
+
 def veure_comande(request):
     #comandes = Comanda.objects.all()
     comandes =(request.session['carro'])
