@@ -22,9 +22,9 @@
                         {% for clau, valor in comandes.items %}
                             <tr>
                                 <td>{{ clau }}</td>
-                                <td>{{ clau.producte.nom }}</td>
+                                <td>{{ clau.nom }}</td>
                                 <td></td>
-                                <td>{{ valor }}</td>
+                                <td>{{ valor }} unitats</td>
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn btn-danger" role="button" href=""><span class="glyphicon glyphicon-trash"></span></a>
@@ -34,6 +34,13 @@
                         {% endfor %}
                     </tbody>
                 </table>
+            </div>
+            <div class="row">
+                <div class="col-md-11 col-md-offset-8">
+                    <div class="butons">
+                        <a class="btn btn-success" role="button" href=""><span class="glyphicon glyphicon-ok"></span> Confirmar comanda</a></span>
+                    </div>
+                </div>
             </div>
 
         {% else %}

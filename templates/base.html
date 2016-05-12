@@ -39,7 +39,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Components<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 {% for tipu in tipus %}
-                                    <li ng-click="BuscarTipus = '{{ tipu.nom }}'"><a href="#">{{ tipu.nom }}</a></li>
+                                    <li><a href="#">{{ tipu.nom }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>
@@ -68,12 +68,12 @@
                     <div class="alert alertes alert-{{ message.tags }} " role="alert">{{message}}</div>
                 {% endfor %}
             {% endif %}
+        </div>
 
-            <div class="container-fluid">
-                {% block content %}
+        <div class="container-fluid">
+            {% block content %}
 
-                {%endblock%}
-            </div>
+            {%endblock%}
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

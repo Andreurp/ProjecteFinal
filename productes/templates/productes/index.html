@@ -7,12 +7,21 @@
                 <span class="pull-left"><a type="button" class="btn btn-info btn-lg text-right" href="{% url 'producte:introduir_producte'%}"><span class="glyphicon glyphicon-plus"></span> Nou producte</a></span>
             </div>
         {% endifequal %}
-        <br/>
-        <div>
-            {% if productes %}
-            <div class="row">
-                {% for producte in productes %}
-                    <div class="producte col-xs-12 col-sm-6 col-md-3">
+    </div>
+    <br/>
+    <div>
+        {% if productes %}
+        <div class="row">
+            <div class="col-xs-12 col-md-2">
+                <div class="list-group table-of-contents">
+                    {% for marca in marcas %}
+                        <a class="list-group-item" href="#">{{ marca.nom }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-10">
+               {% for producte in productes %}
+                    <div class="producte col-xs-12 col-sm-6 col-md-4">
                         <div class="thumbnail">
                             <div style="min-height: 150px">
                                 <img class="img-responsive" style="height: 142px; width: 100%" src="{{producte.imatge.url}}">
@@ -35,9 +44,11 @@
                     </div>
                 {% endfor %}
             </div>
-            {% else %}
-                <p>No hi han productes</p>
-            {% endif %}
+
         </div>
+        {% else %}
+            <p>No hi han productes</p>
+        {% endif %}
     </div>
+
 {%endblock%}

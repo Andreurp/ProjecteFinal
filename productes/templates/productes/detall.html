@@ -1,60 +1,69 @@
 {%extends 'base.html' %}
 {%block titol%}<span xmlns="http://www.w3.org/1999/html">Detall</span>{%endblock titol%}
 {%block content%}
-    <div class="container">
-        <div>
-            {% if producte %}
-            <div class="row">
-                <div class="producte col-xs-12 col-md-6">
-                    <div class="thumbnail">
-                        <div style="min-height: 300px">
-                            <img class="img-responsive" style="height: 300px; width: 100%" src="{{producte.imatge.url}}">
+    <div class="row">
+        <div class="col-xs-12 col-md-2">
+            <div class="list-group table-of-contents">
+                {% for marca in marcas %}
+                    <a class="list-group-item" href="#">{{ marca.nom }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-10">
+            <div>
+                {% if producte %}
+                <div class="row">
+                    <div class="producte col-xs-12 col-md-6">
+                        <div class="thumbnail">
+                            <div style="min-height: 300px">
+                                <img class="img-responsive" style="height: 300px; width: 100%" src="{{producte.imatge.url}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="producte col-xs-12 col-md-6">
+                        <h3 class="bg-primary text-center">{{ producte.nom }}</h3>
+                        <br/>
+                        <div class="producte col-xs-12 col-md-6">
+                            <h4>Preu: {{producte.preu}} € </h4>
+                            <h4>Stock: {{producte.stock}} unitats </h4>
+                        </div>
+                        <div class="producte col-xs-12 col-md-6">
+                            <h4>Marca: {{producte.marca}} </h4>
+                            <h4>Component: {{producte.tipus}} </h4>
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <div class="butons col-md-6 col-md-offset-3">
+                            <a class="btn btn-warning" role="button" href="{% url 'comande:update_session' producte.id_producte %}"><span class="glyphicon glyphicon-shopping-cart"></span> Afegir producte</a></span>
                         </div>
                     </div>
                 </div>
-                <div class="producte col-xs-12 col-md-6">
-                    <h3 class="bg-primary text-center">{{ producte.nom }}</h3>
-                    <br/>
-                    <div class="producte col-xs-12 col-md-6">
-                        <h4>Preu: {{producte.preu}} € </h4>
-                        <h4>Stock: {{producte.stock}} unitats </h4>
-                    </div>
-                    <div class="producte col-xs-12 col-md-6">
-                        <h4>Marca: {{producte.marca}} </h4>
-                        <h4>Component: {{producte.tipus}} </h4>
-                    </div>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <div class="butons col-md-6 col-md-offset-3">
-                        <a class="btn btn-warning" role="button" href="{% url 'comande:update_session' producte.id_producte %}"><span class="glyphicon glyphicon-shopping-cart"></span> Afegir producte</a></span>
-                    </div>
-                </div>
-            </div>
-            {% else %}
-                <p>No hi ha cap producte seleccionat</p>
-            {% endif %}
-            <br/>
-            <div>
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs nav-justified" role="tablist">
-                    <li role="presentation" class="active"><a href="#Caracteristiques" aria-controls="Caracteristiques" role="tab" data-toggle="tab">Caracteristiques</a></li>
-                    <li role="presentation"><a href="#Restriccions" aria-controls="Restriccions" role="tab" data-toggle="tab">Restriccions</a></li>
-                </ul>
+                {% else %}
+                    <p>No hi ha cap producte seleccionat</p>
+                {% endif %}
+                <br/>
+                <div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                        <li role="presentation" class="active"><a href="#Caracteristiques" aria-controls="Caracteristiques" role="tab" data-toggle="tab">Caracteristiques</a></li>
+                        <li role="presentation"><a href="#Restriccions" aria-controls="Restriccions" role="tab" data-toggle="tab">Restriccions</a></li>
+                    </ul>
 
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    {% if producte.caracteristiques %}
-                        <div role="tabpanel" class="tab-pane active" id="Caracteristiques">{{producte.caracteristiques | linebreaksbr }}</div>
-                    {% else %}
-                        <div role="tabpanel" class="tab-pane active" id="Caracteristiques">No hi ha cap caracteristica d'aquest producte</div>
-                    {% endif %}
-                    {% if producte.restriccio %}
-                        <div role="tabpanel" class="tab-pane" id="Restriccions">Restriccions {{producte.restriccio | linebreaksbr }}</div>
-                    {% else %}
-                        <div role="tabpanel" class="tab-pane" id="Restriccions">No hi ha cap restricció d'aquest producte</div>
-                    {% endif %}
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        {% if producte.caracteristiques %}
+                            <div role="tabpanel" class="tab-pane active" id="Caracteristiques">{{producte.caracteristiques | linebreaksbr }}</div>
+                        {% else %}
+                            <div role="tabpanel" class="tab-pane active" id="Caracteristiques">No hi ha cap caracteristica d'aquest producte</div>
+                        {% endif %}
+                        {% if producte.restriccio %}
+                            <div role="tabpanel" class="tab-pane" id="Restriccions">Restriccions {{producte.restriccio | linebreaksbr }}</div>
+                        {% else %}
+                            <div role="tabpanel" class="tab-pane" id="Restriccions">No hi ha cap restricció d'aquest producte</div>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>

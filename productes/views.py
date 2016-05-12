@@ -19,7 +19,8 @@ from productes.models import Producte, Tipus_Producte, Marca_Producte
 def veure_productes(request):
     productes = Producte.objects.all()
     tipus = Tipus_Producte.objects.all()
-    return render(request, 'productes/index.html', {'productes': productes, 'tipus': tipus})
+    marcas = Marca_Producte.objects.all()
+    return render(request, 'productes/index.html', {'productes': productes, 'tipus': tipus, 'marcas': marcas})
 
 @login_required
 def intro_edit_producte(request, id_producte=None):
@@ -64,7 +65,8 @@ def eliminar_producte(request, id_producte):
 def veure_detall(request, id_producte):
     producte = get_object_or_404(Producte, pk=id_producte)
     tipus = Tipus_Producte.objects.all()
-    return render(request, 'productes/detall.html', {'producte': producte, 'tipus': tipus})
+    marcas = Marca_Producte.objects.all()
+    return render(request, 'productes/detall.html', {'producte': producte, 'tipus': tipus, 'marcas': marcas})
 
 #Tipus_admin
 
