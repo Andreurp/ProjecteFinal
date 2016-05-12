@@ -26,11 +26,11 @@ def update_session(request, id_producte):
 #Comandes
 
 def veure_comande(request):
+    tipus = Tipus_Producte.objects.all()
+
     if 'carro' not in request.session:
         request.session['carro'] = {}
 
-    tipus = Tipus_Producte.objects.all()
-    #comandes = Comanda.objects.all()
     comandes =request.session['carro']
     return render(request, 'comandes/index.html', {'comandes': comandes, 'tipus': tipus})
 

@@ -3,12 +3,39 @@
 {%block content%}
     <div class="container">
         {% if comandes %}
-            {% for clau, valor in comandes.items %}
-                <p>{{ clau }}: {{ valor}},</p>
-            {% endfor %}
-            <div class="butons">
-                <a class="btn btn-danger" role="button" href="{% url 'comande:esborra_carro' %}"><span class="glyphicon glyphicon-trash"></span> Buidar carro</a></span>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nom</th>
+                            <th>Imatge</th>
+                            <th>Quantitat</th>
+                            <th>Opcions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <div class="butons">
+                            <a class="btn btn-danger" role="button" href="{% url 'comande:esborra_carro' %}"><span class="glyphicon glyphicon-trash"></span> Buidar carro</a></span>
+                        </div>
+                        <br/>
+                        {% for clau, valor in comandes.items %}
+                            <tr>
+                                <td>{{ clau }}</td>
+                                <td>{{ clau.producte.nom }}</td>
+                                <td></td>
+                                <td>{{ valor }}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a class="btn btn-danger" role="button" href=""><span class="glyphicon glyphicon-trash"></span></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
+
         {% else %}
             <p>No hi han productes en el carro</p>
         {% endif %}
