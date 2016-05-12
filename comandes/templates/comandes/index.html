@@ -2,8 +2,15 @@
 {%block titol%}<span xmlns="http://www.w3.org/1999/html">Detall</span>{%endblock titol%}
 {%block content%}
     <div class="container">
-        {% for comanda in comandes %}
-            <p>{{ comande.carro.id_producte }}</p>
-        {% endfor %}
+        {% if comandes %}
+            {% for clau, valor in comandes.items %}
+                <p>{{ clau }}: {{ valor}},</p>
+            {% endfor %}
+            <div class="butons">
+                <a class="btn btn-danger" role="button" href="{% url 'comande:esborra_carro' %}"><span class="glyphicon glyphicon-trash"></span> Buidar carro</a></span>
+            </div>
+        {% else %}
+            <p>No hi han productes en el carro</p>
+        {% endif %}
     </div>
 {%endblock%}
