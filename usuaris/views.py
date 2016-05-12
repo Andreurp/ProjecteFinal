@@ -79,4 +79,4 @@ def vista_login(request):
 def logout_view(request):
     logout(request)
     messages.success(request, 'Ja has sortit del teu compte')
-    return HttpResponseRedirect(reverse('login'))
+    return HttpResponseRedirect(reverse('producte:veure_productes'))
