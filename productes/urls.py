@@ -10,6 +10,8 @@ urlpatterns = [
     url(r'^editar_producte/(?P<id_producte>[0-9]+)/$', views.intro_edit_producte, name='editar_producte'),
     url(r'^eliminar_producte/(?P<id_producte>[0-9]+)/$', views.eliminar_producte, name='eliminar_producte'),
     url(r'^veure_detall/(?P<id_producte>[0-9]+)/$', views.veure_detall, name='veure_detall'),
+    url(r'^filtrar_tipus/(?P<id_tipus>[0-9]+)/$', views.filtrar_tipus, name='filtrar_tipus'),
+    url(r'^filtrar_marcas/(?P<id_marca>[0-9]+)/$', views.filtrar_marcas, name='filtrar_marcas'),
 
     url(r'^tipus/$', views.veure_tipus, name='veure_tipus'),
     url(r'^tipus/introduir_tipus/$', views.intro_edit_tipus, name='introduir_tipus'),

@@ -68,7 +68,7 @@ def veure_detall(request, id_producte):
     marcas = Marca_Producte.objects.all()
     return render(request, 'productes/detall.html', {'producte': producte, 'tipus': tipus, 'marcas': marcas})
 
-#Tipus_admin
+#Tipus
 
 @login_required
 def veure_tipus(request):
@@ -114,7 +114,12 @@ def eliminar_tipus(request, id_tipus):
     tipu.delete()
     return HttpResponseRedirect(reverse('producte:veure_tipus') )
 
-#Marcas_admin
+def filtrar_tipus(request, id_tipus):
+    productes = Producte.objects.filter(tipus_id=id_tipus)
+    tipus = Tipus_Producte.objects.all()
+    marcas = Marca_Producte.objects.all()
+    return render(request, 'productes/index.html', {'productes': productes, 'tipus': tipus, 'marcas': marcas})
+#Marques
 
 @login_required
 def veure_marcas(request):
@@ -160,3 +165,9 @@ def eliminar_marca(request, id_marca):
     messages.add_message(request, messages.SUCCESS,'La marca ha sigut eliminada correctament')
     marca.delete()
     return HttpResponseRedirect(reverse('producte:veure_marcas') )
+
+def filtrar_marcas(request, id_marca):
+    productes = Producte.objects.filter(marca_id=id_marca)
+    tipus = Tipus_Producte.objects.all()
+    marcas = Marca_Producte.objects.all()
+    return render(request, 'productes/index.html', {'productes': productes, 'tipus': tipus, 'marcas': marcas})
