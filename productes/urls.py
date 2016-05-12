@@ -13,6 +13,8 @@ urlpatterns = [
     url(r'^filtrar_tipus/(?P<id_tipus>[0-9]+)/$', views.filtrar_tipus, name='filtrar_tipus'),
     url(r'^filtrar_marcas/(?P<id_marca>[0-9]+)/$', views.filtrar_marcas, name='filtrar_marcas'),
 
+#Admin
+
     url(r'^tipus/$', views.veure_tipus, name='veure_tipus'),
     url(r'^tipus/introduir_tipus/$', views.intro_edit_tipus, name='introduir_tipus'),
     url(r'^tipus/editar_tipus/(?P<id_tipus>[0-9]+)/$', views.intro_edit_tipus, name='editar_tipus'),
