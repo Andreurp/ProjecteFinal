@@ -5,7 +5,7 @@ from django.http import *
 from django.contrib import messages
 from django.core.urlresolvers import reverse
 
-from productes.models import Tipus_Producte
+from productes.models import Tipus_Producte, Producte
 
 #Afagir Producte
 
@@ -31,9 +31,23 @@ def veure_comande(request):
     if 'carro' not in request.session:
         request.session['carro'] = {}
 
-    comandes =request.session['carro']
-    return render(request, 'comandes/index.html', {'comandes': comandes, 'tipus': tipus})
+    ##comandes =request.session['carro']
+
+    ui_carro = []
+    for id in request.session['carro']:
+        ui_carro.append( { 'producte': Producte.objects.get( id_producte = id ),
+                           'quantitat': request.session['carro'][id],
+                         }
+                        )
+
+    return render(request, 'comandes/index.html', {'ui_carro': ui_carro, 'tipus': tipus})
 
 def esborra_carro(request):
-    request.session['carro']={}
+    del request.session['carro']
     return HttpResponseRedirect(reverse('producte:veure_productes'))
+
+def esborra_linia(request, id_producte):
+    request.session.modified = True
+    producte = request.session['carro']
+    del producte[id_producte]
+    return HttpResponseRedirect(reverse('comande:veure_comande'))

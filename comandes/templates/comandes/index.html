@@ -2,7 +2,7 @@
 {%block titol%}<span xmlns="http://www.w3.org/1999/html">Detall</span>{%endblock titol%}
 {%block content%}
     <div class="container">
-        {% if comandes %}
+        {% if ui_carro %}
             <div class="table-responsive">
                 <table class="table table-hover table-striped">
                     <thead>
@@ -20,16 +20,16 @@
                             <a class="btn btn-danger" role="button" href="{% url 'comande:esborra_carro' %}"><span class="glyphicon glyphicon-trash"></span> Buidar carro</a></span>
                         </div>
                         <br/>
-                        {% for clau, valor in comandes.items %}
+                        {% for element in ui_carro %}
                             <tr>
-                                <td>{{ clau }}</td>
-                                <td>{{ clau.nom }}</td>
-                                <td></td>
-                                <td>{{ valor }} unitats</td>
-                                <td></td>
+                                <td>{{  element.producte.id_producte }}</td>
+                                <td>{{  element.producte.nom }}</td>
+                                <td><img src="{{  element.producte.imatge.url }}" style="max-width: 100px; max-height: 100px;"></td>
+                                <td>{{ element.quantitat }} unitats</td>
+                                <td>{{  element.producte.preu }} €</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-danger" role="button" href=""><span class="glyphicon glyphicon-trash"></span></a>
+                                        <a class="btn btn-danger" role="button" href="{% url 'comande:esborra_linia' element.producte.id_producte %}"><span class="glyphicon glyphicon-trash"></span></a>
                                     </div>
                                 </td>
                             </tr>
