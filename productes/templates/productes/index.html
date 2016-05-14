@@ -47,7 +47,18 @@
 
         </div>
         {% else %}
-            <p>No hi han productes</p>
+            <div class="row">
+                <div class="col-xs-12 col-md-2">
+                    <div class="list-group table-of-contents">
+                        {% for marca in marcas %}
+                            <a class="list-group-item" href="{% url 'producte:filtrar_marcas' marca.id %}">{{ marca.nom }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-10">
+                    <p>No hi han productes</p>
+                </div>
+            </div>
         {% endif %}
     </div>
 
