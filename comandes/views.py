@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from productes.models import Tipus_Producte, Producte
 from comandes.models import Comanda, Linia
 
-#Afagir Producte
+#Afagir Producte en el carro
 
 def update_session(request, id_producte):
 
@@ -25,7 +25,7 @@ def update_session(request, id_producte):
     messages.add_message(request, messages.SUCCESS, 'El producte ha sigut afegit correctament')
     return HttpResponseRedirect(reverse('producte:veure_productes') )
 
-#Comandes
+#Comanda actual
 
 def veure_comande(request):
     tipus = Tipus_Producte.objects.all()
@@ -73,6 +73,7 @@ def comfimar_carro(request):
         for clau in request.session['carro']:
             pr = Producte.objects.get(id_producte=clau)
             qtat = request.session['carro'][clau]
+
             linia=Linia()
             linia.id_comanda=comanda
             linia.id_producte=pr
@@ -84,4 +85,12 @@ def comfimar_carro(request):
             pr.save()
 
         del request.session['carro']
-    return render(request, 'comandes/llistaComandes.html')
+    return HttpResponseRedirect(reverse('comande:llista_comandes'))
+
+#veure totes les comandes fetes
+
+@login_required
+def llista_comandes(request):
+    tipus = Tipus_Producte.objects.all()
+    comandes = Comanda.objects.filter(usuari=request.user)
+    return render(request, 'comandes/llistaComandes.html', {'comandes':comandes,'tipus': tipus})
