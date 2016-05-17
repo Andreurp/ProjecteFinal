@@ -11,7 +11,8 @@ urlpatterns = [
     url(r'^veure_comande/esborra_carro/$', views.esborra_carro, name='esborra_carro'),
     url(r'^veure_comande/esborra_linia/(?P<id_producte>[0-9]+)/$', views.esborra_linia, name='esborra_linia'),
     url(r'^veure_comande/comfimar_carro/$', views.comfimar_carro, name='comfimar_carro'),
-    url(r'^veure_comande/llista_comandes/$', views.llista_comandes, name='llista_comandes'),
-    url(r'^veure_comande/llista_comandes/detall_comanda/(?P<num_comanda>[0-9]+)/$', views.detall_comanda, name='detall_comanda'),
+
+    url(r'^llista_comandes/$', views.llista_comandes, name='llista_comandes'),
+    url(r'^llista_comandes/detall_comanda/(?P<num_comanda>[0-9]+)/$', views.detall_comanda, name='detall_comanda'),
 
 ]
