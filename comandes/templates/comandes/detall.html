@@ -2,6 +2,25 @@
 {%block titol%}<span xmlns="http://www.w3.org/1999/html">Detall</span>{%endblock titol%}
 {%block content%}
     <div class="container">
-
+        <div class="table-responsive">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Quantitat</th>
+                        <th>Preu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for producte in productes %}
+                        <tr>
+                            <td>{{ producte.id_linia }}</td>
+                            <td>{{ producte.quantitat }}</td>
+                            <td>{{ producte.preu }} €</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 {%endblock%}

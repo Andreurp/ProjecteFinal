@@ -95,7 +95,8 @@ def llista_comandes(request):
     return render(request, 'comandes/llistaComandes.html', {'comandes':comandes,'tipus': tipus})
 
 @login_required
-def detall_comanda(request, num_comanda):
-    comanda = get_object_or_404(Comanda, pk=num_comanda)
+def detall_comanda(request, id_comanda):
+    #productes = get_object_or_404(Linia, pk=id_comanda)
+    productes = Linia.objects.filter(id_comanda=id_comanda)
     tipus = Tipus_Producte.objects.all()
-    return render(request, 'comandes/detall.html', {'comanda': comanda, 'tipus': tipus})
+    return render(request, 'comandes/detall.html', {'productes': productes, 'tipus': tipus})

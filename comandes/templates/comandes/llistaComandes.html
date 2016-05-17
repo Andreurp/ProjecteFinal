@@ -17,13 +17,13 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{ comanda.num_comanda  }}</td>
+                                <td>{{ comanda.id_comanda  }}</td>
                                 <td>{{ comanda.data }}</td>
                                 <td>{{ comanda.estat }}</td>
                                 <td>{{ comanda.usuari }}</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn btn-info" role="button" href="{% url 'comande:detall_comanda' comanda.num_comanda%}"><span class="glyphicon glyphicon-zoom-in"> Datall</span></a>
+                                        <a class="btn btn-info" role="button" href="{% url 'comande:detall_comanda' comanda.id_comanda%}"><span class="glyphicon glyphicon-zoom-in"> Datall</span></a>
                                     </div>
                                 </td>
                             </tr>

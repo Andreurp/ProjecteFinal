@@ -13,6 +13,6 @@ urlpatterns = [
     url(r'^veure_comande/comfimar_carro/$', views.comfimar_carro, name='comfimar_carro'),
 
     url(r'^llista_comandes/$', views.llista_comandes, name='llista_comandes'),
-    url(r'^llista_comandes/detall_comanda/(?P<num_comanda>[0-9]+)/$', views.detall_comanda, name='detall_comanda'),
+    url(r'^llista_comandes/detall_comanda/(?P<id_comanda>[0-9]+)/$', views.detall_comanda, name='detall_comanda'),
 
 ]

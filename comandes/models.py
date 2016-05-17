@@ -18,7 +18,7 @@ class Linia(models.Model):
         return self.quantitat*self.preu-(self.quantitat*self.preu-(self.descompte/100))
 
 class Comanda(models.Model):
-    num_comanda = models.AutoField(primary_key=True)
+    id_comanda = models.AutoField(primary_key=True)
     data = models.DateField(auto_now=True)
     usuari = models.ForeignKey(User)
     Rebuda = 'R'
