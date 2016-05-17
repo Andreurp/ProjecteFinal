@@ -26,7 +26,7 @@
                                 <td>{{  element.producte.nom }}</td>
                                 <td><img src="{{  element.producte.imatge.url }}" style="max-width: 100px; max-height: 100px;"></td>
                                 <td>{{ element.quantitat }} unitats</td>
-                                <td>{{  element.producte.preu }} €</td>
+                                <td>{{  element.preu_total }} €</td>
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn btn-danger" role="button" href="{% url 'comande:esborra_linia' element.producte.id_producte %}"><span class="glyphicon glyphicon-trash"></span></a>
@@ -34,13 +34,14 @@
                                 </td>
                             </tr>
                         {% endfor %}
+                    <tr><td>{{ preu_comanda }}</td></tr>
                     </tbody>
                 </table>
             </div>
             <div class="row">
                 <div class="col-md-11 col-md-offset-8">
                     <div class="butons">
-                        <a class="btn btn-success" role="button" href=""><span class="glyphicon glyphicon-ok"></span> Confirmar comanda</a></span>
+                        <a class="btn btn-success" role="button" href="{% url 'comande:comfimar_carro' %}"><span class="glyphicon glyphicon-ok"></span> Confirmar comanda</a></span>
                     </div>
                 </div>
             </div>

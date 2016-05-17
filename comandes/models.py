@@ -11,12 +11,15 @@ class Linia(models.Model):
     id_linia = models.AutoField(primary_key=True)
     id_comanda = models.ForeignKey('Comanda')
     id_producte = models.ForeignKey('productes.Producte')
+    preu = models.DecimalField(max_digits=7, decimal_places=2)
     quantitat = models.IntegerField()
     descompte = models.DecimalField(max_digits=4, decimal_places=1, default=0, null=True, blank=True, help_text="descompte")
+    def preu_linia(self):
+        return self.quantitat*self.preu-(self.quantitat*self.preu-(self.descompte/100))
 
 class Comanda(models.Model):
     num_comanda = models.AutoField(primary_key=True)
-    data = models.DateField()
+    data = models.DateField(auto_now=True)
     usuari = models.ForeignKey(User)
     Rebuda = 'R'
     Processant = 'P'
@@ -29,4 +32,4 @@ class Comanda(models.Model):
                      (Entregada, 'Entregada',),
                      (Anulada, 'Anulada',)
                      )
-    estat = models.CharField(max_length=1, choices=Estat_Comanda, help_text="Estat_Comanda")
+    estat = models.CharField(max_length=1, choices=Estat_Comanda, default='R', help_text="Estat_Comanda")
