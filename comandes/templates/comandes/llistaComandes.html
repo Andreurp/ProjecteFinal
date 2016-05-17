@@ -11,12 +11,21 @@
                                 <th>#</th>
                                 <th>Data</th>
                                 <th>Estat</th>
-                                <th></th>
+                                <th>Usuari</th>
+                                <th>Opcions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>{{ comanda.num_comanda  }}</td>
+                                <td>{{ comanda.data }}</td>
+                                <td>{{ comanda.estat }}</td>
+                                <td>{{ comanda.usuari }}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a class="btn btn-info" role="button" href=""><span class="glyphicon glyphicon-zoom-in"> Datall</span></a>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
