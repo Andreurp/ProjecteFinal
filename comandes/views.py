@@ -1,6 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
-# Create your views here.
 from django.http import *
 from django.contrib import messages
 from django.core.urlresolvers import reverse
@@ -94,3 +93,9 @@ def llista_comandes(request):
     tipus = Tipus_Producte.objects.all()
     comandes = Comanda.objects.filter(usuari=request.user)
     return render(request, 'comandes/llistaComandes.html', {'comandes':comandes,'tipus': tipus})
+
+@login_required
+def detall_comanda(request, num_comanda):
+    comanda = get_object_or_404(Comanda, pk=num_comanda)
+    tipus = Tipus_Producte.objects.all()
+    return render(request, 'comandes/detall.html', {'comanda': comanda, 'tipus': tipus})
