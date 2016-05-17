@@ -8,15 +8,17 @@
                     <tr>
                         <th>#</th>
                         <th>Quantitat</th>
+                        <td>Descompte</td>
                         <th>Preu</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for producte in productes %}
+                    {% for linia in linies %}
                         <tr>
-                            <td>{{ producte.id_linia }}</td>
-                            <td>{{ producte.quantitat }}</td>
-                            <td>{{ producte.preu }} €</td>
+                            <td>{{ linia.id_linia }}</td>
+                            <td>{{ linia.quantitat }}</td>
+                            <td>{{ linia.descompte }}</td>
+                            <td>{{ linia.preu }} €</td>
                         </tr>
                     {% endfor %}
                 </tbody>
