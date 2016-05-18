@@ -46,7 +46,7 @@
                             </ul>
                         </li>
                         {% if user.is_authenticated %}
-                            <li><a href="{% url 'comande:llista_comandes' %}">Llidta des comandes <span class="sr-only"> </span></a></li>
+                            <li><a href="{% url 'comande:llista_comandes' %}">Les mevas comandes<span class="sr-only"> </span></a></li>
                         {% endif %}
                         {% ifequal user.username "admin" %}
                             <li><a href="{% url 'producte:veure_tipus' %}">Llista tipus<span class="sr-only"> </span></a></li>
