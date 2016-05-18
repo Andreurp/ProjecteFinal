@@ -5,7 +5,7 @@
         <div class="col-xs-12 col-md-2">
             <div class="list-group table-of-contents">
                 {% for marca in marcas %}
-                    <a class="list-group-item" href="#">{{ marca.nom }}</a>
+                    <a class="list-group-item" href="{% url 'producte:filtrar_marcas' marca.id %}">{{ marca.nom }}</a>
                 {% endfor %}
             </div>
         </div>
