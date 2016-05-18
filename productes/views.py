@@ -138,6 +138,7 @@ def filtrar_tipus(request, id_tipus):
     tipus = Tipus_Producte.objects.all()
     marcas = Marca_Producte.objects.all()
     return render(request, 'productes/index.html', {'productes': productes, 'tipus': tipus, 'marcas': marcas})
+
 #Marques
 
 @login_required
