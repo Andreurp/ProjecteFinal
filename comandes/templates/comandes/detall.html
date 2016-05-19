@@ -2,27 +2,48 @@
 {%block titol%}<span xmlns="http://www.w3.org/1999/html">Detall</span>{%endblock titol%}
 {%block content%}
     <div class="container">
-        <div class="table-responsive">
-            <table class="table table-hover table-striped">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Unitats</th>
-                        <td>Descompte</td>
-                        <th>Preu</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for linia in linies %}
+        {% if ui_comanda %}
+            <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead>
                         <tr>
-                            <td>{{ linia.id_linia }}</td>
-                            <td>{{ linia.quantitat }}</td>
-                            <td>{{ linia.descompte }}</td>
-                            <td>{{ linia.preu }} €</td>
+                            <th>#</th>
+                            <th>Nom</th>
+                            <th>Imatge</th>
+                            <th>Unitats</th>
+                            <th>Preu</th>
                         </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                        <br/>
+                        {% for element in ui_comanda %}
+                            <tr>
+                                <td>{{  element.producte.id_producte }}</td>
+                                <td>{{  element.producte.nom }}</td>
+                                <td><img src="{{  element.producte.imatge.url }}" style="max-width: 100px; max-height: 100px;"></td>
+                                <td>{{ element.quantitat }}</td>
+                                <td>{{  element.preu_total }} €</td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <div>
+                                <th style="text-align: right;" colspan="4">Preu total</th>
+                                <td>{{ preu_comanda }} €</td>
+                            </div>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-md-11 col-md-offset-8">
+                    <div class="butons">
+                        <a class="btn btn-success" role="button" href="{% url 'comande:comfimar_carro' %}"><span class="glyphicon glyphicon-ok"></span> Confirmar comanda</a></span>
+                    </div>
+                </div>
+            </div>
+
+        {% else %}
+            <p>No hi han productes en el carro</p>
+        {% endif %}
     </div>
 {%endblock%}

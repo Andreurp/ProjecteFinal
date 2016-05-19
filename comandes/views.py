@@ -96,6 +96,19 @@ def llista_comandes(request):
 
 @login_required
 def detall_comanda(request, id_comanda):
+    preu_comanda = 0
+    ui_comanda = []
     linies = Linia.objects.filter(id_comanda=id_comanda)
     tipus = Tipus_Producte.objects.all()
-    return render(request, 'comandes/detall.html', {'linies': linies, 'tipus': tipus})
+    for linia in linies.all():
+        pr = Producte.objects.get(id_producte=linia.id_producte_id)
+        qtat = linia.quantitat
+        preu_total = linia.preu
+        preu_comanda += preu_total
+        ui_comanda.append({'producte': pr,
+                         'quantitat': qtat,
+                         'preu_total': preu_total
+                         }
+                        )
+
+    return render(request, 'comandes/detall.html', {'ui_comanda': ui_comanda, 'preu_comanda': preu_comanda, 'tipus': tipus})
