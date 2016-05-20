@@ -28,7 +28,7 @@
                                 <img class="img-responsive" style="height: 200px; width: 100%" src="{{producte.imatge.url}}">
                             </div>
                             <div class="caption">
-                                <h3 class="bg-primary"><a href="{% url 'producte:veure_detall' producte.id_producte %}">{{ producte.nom }}</a></h3>
+                                <h3 class="bg-primary" style="max-height: 1.2em; overflow: hidden"><a href="{% url 'producte:veure_detall' producte.id_producte %}">{{ producte.nom }}</a></h3>
                                 <h4>Preu: {{producte.preu}} € </h4>
                                 {% ifequal user.username "admin" %}
                                     <div class="butons btn-group btn-group-justified">
@@ -37,7 +37,7 @@
                                     </div>
                                 {% else %}
                                     <div class="butons">
-                                        <a class="btn btn-warning" role="button" href="{% url 'comande:update_session' producte.id_producte %}"><span class="glyphicon glyphicon-shopping-cart"></span> Afegir producte</a></span>
+                                        <a class="btn btn-warning" role="button" href="{% url 'comande:update_session' producte.id_producte %}"><span class="glyphicon glyphicon-shopping-cart"></span> Afegir al carro</a></span>
                                     </div>
                                 {% endifequal %}
                             </div>
