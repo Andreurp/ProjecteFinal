@@ -71,9 +71,10 @@ def eliminar_producte(request, id_producte):
 
 def veure_detall(request, id_producte):
     producte = get_object_or_404(Producte, pk=id_producte)
+    estoc = range(1,producte.stock+1)
     tipus = Tipus_Producte.objects.all()
     marcas = Marca_Producte.objects.all()
-    return render(request, 'productes/detall.html', {'producte': producte, 'tipus': tipus, 'marcas': marcas})
+    return render(request, 'productes/detall.html', {'producte': producte, 'tipus': tipus, 'marcas': marcas, 'estoc': estoc})
 
 #Tipus
 
