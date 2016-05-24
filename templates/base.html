@@ -55,9 +55,9 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         {% ifequal user.username "admin" %}
-                             <li><a href="{% url 'backup:fer_backups' %}"><span class="glyphicon glyphicon-hdd"> Backup BDD</span> </a></li>
+                             <li><a href="{% url 'backup:fer_backups' %}"><span class="glyphicon glyphicon-hdd"></span> Backup BDD</a></li>
                         {% endifequal %}
-                        <li><a href="{% url 'comande:veure_comande' %}"><span class="glyphicon glyphicon-shopping-cart"></span> </a></li>
+                        <li><a href="{% url 'comande:veure_comande' %}"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                         {% if user.is_authenticated %}
                             <li><a href="{% url 'sortir' %}">Sortir</a></li>
                         {% else %}
