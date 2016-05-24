@@ -27,16 +27,22 @@
                             <h4>Component: {{producte.tipus}} </h4>
                             <h4>Marca: {{producte.marca}} </h4>
                             <h4>Preu: {{producte.preu}} € </h4>
-                            <form>
+                            <form action="/update_sessionPost/" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" id="id_producte" name="id_producte" value="{{ producte.id_producte }}"/>
                                 <h4>Quantitat:
-                                    <select class="selectpicker" data-width="fit">
-                                        {% for i in estoc %}
-                                            <option>{{ i }}</option>
-                                        {% endfor %}
+                                    <select class="selectpicker" id="qtat" name="quantitat" data-width="fit">
+                                        {%  if producte.stock == 0 %}
+                                            <option value="0">No queda estoc</option>
+                                        {% else %}
+                                            {% for i in estoc %}
+                                                <option value="{{ i }}">{{ i }}</option>
+                                            {% endfor %}
+                                        {%  endif %}
                                     </select>
                                 </h4>
                                 <br/>
-                                <a class="afegir btn btn-warning" role="button" href="{% url 'comande:update_session' producte.id_producte %}"><span class="glyphicon glyphicon-shopping-cart"></span> Afegir al carro</a></span>
+                                <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-shopping-cart"></span> Afegir al carro</button>
                             </form>
                         </div>
                     </div>
