@@ -23,7 +23,7 @@ def update_session(request, id_producte, quantitat=1):
     messages.add_message(request, messages.SUCCESS, 'El producte ha sigut afegit correctament')
     return HttpResponseRedirect(reverse('producte:veure_productes') )
 
-    #amb la qüantitat indicada
+    #amb la quantitat indicada
 
 def update_sessionPost(request):
     if request.method == 'POST':
