@@ -3,14 +3,12 @@
 from django.core.urlresolvers import reverse
 from django.http import *
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.core.management import call_command
 import datetime
 import sys
 
-def mostra_backups(request):
-
-    return True
-
+@login_required
 def fer_backups(request):
     if (request.user.username != "admin"):
         messages.add_message(request, messages.ERROR, 'No tens permisos per fer aquesta acció')
