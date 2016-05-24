@@ -7,22 +7,38 @@ from django.contrib.auth.decorators import login_required
 
 from productes.models import Tipus_Producte, Producte
 from comandes.models import Comanda, Linia
+from .forms import compra_producte
 
 #Afagir Producte en el carro
-
+    #de un a un
 def update_session(request, id_producte, quantitat=1):
-
     if 'carro' not in request.session:
         request.session['carro'] ={}
-
     if id_producte not in request.session['carro']:
         qtat = quantitat
     else:
         qtat = request.session['carro'][id_producte]+1
-    request.session['carro'].update({id_producte:qtat})
 
+    request.session['carro'].update({id_producte:qtat})
     messages.add_message(request, messages.SUCCESS, 'El producte ha sigut afegit correctament')
     return HttpResponseRedirect(reverse('producte:veure_productes') )
+
+    #amb la qüantitat indicada
+
+def update_sessionPost(request):
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = compra_producte(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            if 'carro' not in request.session:
+                request.session['carro'] = {}
+
+            request.session['carro'].update({form.cleaned_data['id_producte']: form.cleaned_data['quantitat']})
+
+            messages.add_message(request, messages.SUCCESS, 'El producte ha sigut afegit correctament')
+        return HttpResponseRedirect(reverse('producte:veure_productes'))
+
 
 #Comanda actual
 
