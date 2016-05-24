@@ -10,13 +10,13 @@ from comandes.models import Comanda, Linia
 
 #Afagir Producte en el carro
 
-def update_session(request, id_producte):
+def update_session(request, id_producte, quantitat=1):
 
     if 'carro' not in request.session:
         request.session['carro'] ={}
 
     if id_producte not in request.session['carro']:
-        qtat = 1
+        qtat = quantitat
     else:
         qtat = request.session['carro'][id_producte]+1
     request.session['carro'].update({id_producte:qtat})

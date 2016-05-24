@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+  <object model="contenttypes.contenttype" pk="1">
+    <field name="app_label" type="CharField">admin</field>
+    <field name="model" type="CharField">logentry</field>
+  </object>
+  <object model="contenttypes.contenttype" pk="2">
+    <field name="app_label" type="CharField">auth</field>
+    <field name="model" type="CharField">permission</field>
+  </object>
+  <object model="contenttypes.contenttype" pk="3">
+    <field name="app_label" type="CharField">auth</field>
+    <field name="model" type="CharField">group</field>
+  </object>
+  <object model="contenttypes.contenttype" pk="4">
+    <field name="app_label" type="CharField">auth</field>
+    <field name="model" type="CharField">user</field>
+  </object>
+  <object model="contenttypes.contenttype" pk="5">
+    <field name="app_label" type="CharField">contenttypes</field>
+    <field name="model" type="CharField">contenttype</field>
+  </object>
+  <object model="contenttypes.contenttype" pk="6">
+    <field name="app_label" type="CharField">sessions</field>
+    <field name="model" type="CharField">session</field>
+  </object>
+  <object model="contenttypes.contenttype" pk="7">
+    <field name="app_label" type="CharField">productes</field>
+    <field name="model" type="CharField">tipus_producte</field>
+  </object>
+  <object model="contenttypes.contenttype" pk="8">
+    <field name="app_label" type="CharField">productes</field>
+    <field name="model" type="CharField">marca_producte</field>
+  </object>
+  <object model="contenttypes.contenttype" pk="9">
+    <field name="app_label" type="CharField">productes</field>
+    <field name="model" type="CharField">producte</field>
+  </object>
+  <object model="contenttypes.contenttype" pk="10">
+    <field name="app_label" type="CharField">comandes</field>
+    <field name="model" type="CharField">linia</field>
+  </object>
+  <object model="contenttypes.contenttype" pk="11">
+    <field name="app_label" type="CharField">comandes</field>
+    <field name="model" type="CharField">comanda</field>
+  </object>
+  <object model="sessions.session" pk="ji71hh2bg8xbgrxgzqy93gzt99ct0lpv">
+    <field name="session_data" type="TextField">MWMzNWFiMWMzMzRiYjJjYzZkM2Q3M2JiZmYzY2U5MTk4MzU4ZmE5Yjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9oYXNoIjoiZDY4NmYxNDhlMjRhYzgyNjI5Y2ZlZGJhMzQ5ZGRkOWU4YmZkYzAxOSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiY2Fycm8iOnsiMSI6Mn19</field>
+    <field name="expire_date" type="DateTimeField">2016-06-07T08:18:34+00:00</field>
+  </object>
+  <object model="productes.tipus_producte" pk="1">
+    <field name="nom" type="CharField">Placas Base</field>
+  </object>
+  <object model="productes.tipus_producte" pk="2">
+    <field name="nom" type="CharField">Procesadors</field>
+  </object>
+  <object model="productes.tipus_producte" pk="3">
+    <field name="nom" type="CharField">Memoria RAM</field>
+  </object>
+  <object model="productes.tipus_producte" pk="4">
+    <field name="nom" type="CharField">Disc Durs</field>
+  </object>
+  <object model="productes.tipus_producte" pk="5">
+    <field name="nom" type="CharField">Disc SSD</field>
+  </object>
+  <object model="productes.tipus_producte" pk="6">
+    <field name="nom" type="CharField">Regrabadoras</field>
+  </object>
+  <object model="productes.tipus_producte" pk="7">
+    <field name="nom" type="CharField">Controladoras</field>
+  </object>
+  <object model="productes.tipus_producte" pk="8">
+    <field name="nom" type="CharField">Targetas Graficas</field>
+  </object>
+  <object model="productes.tipus_producte" pk="9">
+    <field name="nom" type="CharField">Targetas de So</field>
+  </object>
+  <object model="productes.tipus_producte" pk="10">
+    <field name="nom" type="CharField">Video y TV</field>
+  </object>
+  <object model="productes.tipus_producte" pk="11">
+    <field name="nom" type="CharField">Refrigeracio</field>
+  </object>
+  <object model="productes.tipus_producte" pk="12">
+    <field name="nom" type="CharField">Caixes</field>
+  </object>
+  <object model="productes.tipus_producte" pk="13">
+    <field name="nom" type="CharField">Fonts d'alimentacio</field>
+  </object>
+  <object model="productes.marca_producte" pk="1">
+    <field name="nom" type="CharField">ASROCK</field>
+  </object>
+  <object model="productes.marca_producte" pk="2">
+    <field name="nom" type="CharField">ASUS</field>
+  </object>
+  <object model="productes.marca_producte" pk="3">
+    <field name="nom" type="CharField">Intel</field>
+  </object>
+  <object model="productes.marca_producte" pk="4">
+    <field name="nom" type="CharField">AMD</field>
+  </object>
+  <object model="productes.marca_producte" pk="5">
+    <field name="nom" type="CharField">Kingston</field>
+  </object>
+  <object model="productes.marca_producte" pk="6">
+    <field name="nom" type="CharField">Western Digital</field>
+  </object>
+  <object model="productes.marca_producte" pk="7">
+    <field name="nom" type="CharField">Seagate</field>
+  </object>
+  <object model="productes.marca_producte" pk="8">
+    <field name="nom" type="CharField">LG</field>
+  </object>
+  <object model="productes.marca_producte" pk="9">
+    <field name="nom" type="CharField">Gigabyte</field>
+  </object>
+  <object model="productes.marca_producte" pk="10">
+    <field name="nom" type="CharField">NZXT</field>
+  </object>
+  <object model="productes.marca_producte" pk="11">
+    <field name="nom" type="CharField">Corsair</field>
+  </object>
+  <object model="productes.producte" pk="1">
+    <field name="nom" type="CharField">PLACA INTEL CORE i3/i5/i7 ASROCK B85M PRO4</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">1</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">1</field>
+    <field name="caracteristiques" type="TextField">PLACA INTEL CORE i3/i5/i7 ASROCK B85M PRO4 SK1150 DDR3 PCX3.0 M-ATX HDMI USB3.0</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/PLACA_INTEL_CORE_i3-i5-i7_ASROCK_B85M_PRO4_SK1150_DDR3_PCX3.0_M-ATX_HDMI_USB3.0_GTT7YcP.jpg</field>
+    <field name="preu" type="DecimalField">73.60</field>
+    <field name="stock" type="IntegerField">3580</field>
+  </object>
+  <object model="productes.producte" pk="2">
+    <field name="nom" type="CharField">PLACA INTEL CORE i3/i5/i7 ASROCK H81-VG4</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">1</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">1</field>
+    <field name="caracteristiques" type="TextField">PLACA INTEL CORE i3/i5/i7 ASROCK H81-VG4 R2.0 SK1150 DDR3 PCX M-ATX USB3.0</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/PLACA_INTEL_CORE_i3-i5-i7_ASROCK_H81-VG4_R2.0_SK1150_DDR3_PCX_M-ATX_USB3.0.jpg</field>
+    <field name="preu" type="DecimalField">45.46</field>
+    <field name="stock" type="IntegerField">583</field>
+  </object>
+  <object model="productes.producte" pk="3">
+    <field name="nom" type="CharField">PLACA INTEL CORE i3/i5/i7 ASUS X99-A</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">2</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">1</field>
+    <field name="caracteristiques" type="TextField">PLACA INTEL CORE i3/i5/i7 ASUS X99-A SK2011-3 DDR4 PCX ATX USB3.1</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/PLACA_INTEL_CORE_i3-i5-i7_ASUS_X99-A.jpg</field>
+    <field name="preu" type="DecimalField">289.46</field>
+    <field name="stock" type="IntegerField">2554</field>
+  </object>
+  <object model="productes.producte" pk="4">
+    <field name="nom" type="CharField">PLACA INTEL CORE i7 ASUS X99S</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">2</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">1</field>
+    <field name="caracteristiques" type="TextField">PLACA INTEL CORE i7 ASUS X99S SK2011-3 DDR4 PCX ATX USB3.0</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/PLACA_INTEL_CORE_i7_ASUS_X99S.jpg</field>
+    <field name="preu" type="DecimalField">320.58</field>
+    <field name="stock" type="IntegerField">578</field>
+  </object>
+  <object model="productes.producte" pk="5">
+    <field name="nom" type="CharField">PLACA AMD ASUS AM1I-A AM1 DDR3 MINI-ITX</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">2</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">1</field>
+    <field name="caracteristiques" type="TextField">PLACA AMD ASUS AM1I-A AM1 DDR3 MINI-ITX HDMI USB3.0</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/PLACA_AMD_ASUS_AM1I-A.jpg</field>
+    <field name="preu" type="DecimalField">36.74</field>
+    <field name="stock" type="IntegerField">574</field>
+  </object>
+  <object model="productes.producte" pk="6">
+    <field name="nom" type="CharField">PLACA AMD ASROCK 990FX EXTREME3</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">1</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">1</field>
+    <field name="caracteristiques" type="TextField">PLACA AMD ASROCK 990FX EXTREME3 AM3+ DDR3 PCX ATX USB3.0</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/PLACA_AMD_ASROCK_990FX_EXTREME3.jpg</field>
+    <field name="preu" type="DecimalField">114.47</field>
+    <field name="stock" type="IntegerField">87</field>
+  </object>
+  <object model="productes.producte" pk="7">
+    <field name="nom" type="CharField">PROCESADOR INTEL CORE i3 4170</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">3</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">2</field>
+    <field name="caracteristiques" type="TextField">PROCESADOR INTEL CORE i3 4170 3.7 GHZ SK1150 3MB</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/PROCESADOR_INTEL_CORE_i3_4170.jpg</field>
+    <field name="preu" type="DecimalField">116.22</field>
+    <field name="stock" type="IntegerField">75</field>
+  </object>
+  <object model="productes.producte" pk="8">
+    <field name="nom" type="CharField">PROCESADOR INTEL CORE i5 4460</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">3</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">2</field>
+    <field name="caracteristiques" type="TextField">PROCESADOR INTEL CORE i5 4460 3.2 GHZ SK1150 6MB 84W</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/PROCESADOR_INTEL_CORE_i5_4460.jpg</field>
+    <field name="preu" type="DecimalField">175.01</field>
+    <field name="stock" type="IntegerField">435</field>
+  </object>
+  <object model="productes.producte" pk="9">
+    <field name="nom" type="CharField">PROCESADOR INTEL CORE i7 5820K</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">3</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">2</field>
+    <field name="caracteristiques" type="TextField">PROCESADOR INTEL CORE i7 5820K 3.3 GHZ SK2011-3 14MB 140W</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/PROCESADOR_INTEL_CORE_i7_5820K.jpg</field>
+    <field name="preu" type="DecimalField">401.59</field>
+    <field name="stock" type="IntegerField">42</field>
+  </object>
+  <object model="productes.producte" pk="10">
+    <field name="nom" type="CharField">PROCESADOR AMD A10 X4 6800K</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">4</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">2</field>
+    <field name="caracteristiques" type="TextField">PROCESADOR AMD A10 X4 6800K 4.1GHZ SKT FM2 4MB GPU ATI HD8670D 100W BLACK EDITION</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/PROCESADOR_AMD_A10_X4_6800K.jpg</field>
+    <field name="preu" type="DecimalField">116.47</field>
+    <field name="stock" type="IntegerField">54</field>
+  </object>
+  <object model="productes.producte" pk="11">
+    <field name="nom" type="CharField">PROCESADOR AMD A4 X2 4020</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">4</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">2</field>
+    <field name="caracteristiques" type="TextField">PROCESADOR AMD A4 X2 4020 3.2GHZ SKT FM2 1MB GPU ATI HD7480D 65W</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/PROCESADOR_AMD_A4_X2_4020.jpg</field>
+    <field name="preu" type="DecimalField">31.57</field>
+    <field name="stock" type="IntegerField">65</field>
+  </object>
+  <object model="productes.producte" pk="12">
+    <field name="nom" type="CharField">MEMORIA 8 GB DDR3 1600 KINGSTON</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">5</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">3</field>
+    <field name="caracteristiques" type="TextField">MEMORIA 8 GB DDR3 1600 KINGSTON CL11 VALUE</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/MEMORIA_8_GB_DDR3_1600_KINGSTON_CL11_VALUE.jpg</field>
+    <field name="preu" type="DecimalField">33.94</field>
+    <field name="stock" type="IntegerField">876</field>
+  </object>
+  <object model="productes.producte" pk="13">
+    <field name="nom" type="CharField">MEMORIA 4 GB DDR4 2133 KINGSTON HYPERX</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">5</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">3</field>
+    <field name="caracteristiques" type="TextField">MEMORIA 4 GB DDR4 2133 KINGSTON HYPERX FURY BLACK CL-14</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/MEMORIA_4_GB_DDR4_2133_KINGSTON_HYPERX.jpg</field>
+    <field name="preu" type="DecimalField">20.75</field>
+    <field name="stock" type="IntegerField">534</field>
+  </object>
+  <object model="productes.producte" pk="15">
+    <field name="nom" type="CharField">MEMORIA 8 GB DDR4 2133 HYPERX</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">5</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">3</field>
+    <field name="caracteristiques" type="TextField">MEMORIA 8 GB DDR4 2133 HYPERX FURY BLACK CL-14</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/MEMORIA_8_GB_DDR4_2133_HYPERX.jpg</field>
+    <field name="preu" type="DecimalField">35.71</field>
+    <field name="stock" type="IntegerField">343</field>
+  </object>
+  <object model="productes.producte" pk="16">
+    <field name="nom" type="CharField">DISCO DURO 2TB WD SATA3</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">6</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">4</field>
+    <field name="caracteristiques" type="TextField">DISCO DURO 2TB WD SATA3 64MB CAVIAR GREEN WD20EZRX</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/DISCO_DURO_2TB_WD_SATA3.jpg</field>
+    <field name="preu" type="DecimalField">79.86</field>
+    <field name="stock" type="IntegerField">54</field>
+  </object>
+  <object model="productes.producte" pk="17">
+    <field name="nom" type="CharField">DISCO DURO 2TB SEAGATE</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">7</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">4</field>
+    <field name="caracteristiques" type="TextField">DISCO DURO 2TB SEAGATE SATA3 7200 64MB BARRACUDA</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/DISCO_DURO_2TB_SEAGATE_SATA3.jpg</field>
+    <field name="preu" type="DecimalField">67.92</field>
+    <field name="stock" type="IntegerField">57</field>
+  </object>
+  <object model="productes.producte" pk="18">
+    <field name="nom" type="CharField">DISCO DURO 3TB WD SATA3</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">6</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">4</field>
+    <field name="caracteristiques" type="TextField">DISCO DURO 3TB WD SATA3 5400RPM 64MB CAVIAR GREEN</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/DISCO_DURO_3TB_WD_SATA3.jpg</field>
+    <field name="preu" type="DecimalField">109.07</field>
+    <field name="stock" type="IntegerField">44</field>
+  </object>
+  <object model="productes.producte" pk="19">
+    <field name="nom" type="CharField">DISCO DURO 120GB 2.5" KINGSTON SSD</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">5</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">5</field>
+    <field name="caracteristiques" type="TextField">DISCO DURO 120GB 2.5" KINGSTON SSD SATA3 HYPERX FURY</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/DISCO_DURO_120GB__KINGSTON_SSD.jpg</field>
+    <field name="preu" type="DecimalField">46.06</field>
+    <field name="stock" type="IntegerField">53</field>
+  </object>
+  <object model="productes.producte" pk="20">
+    <field name="nom" type="CharField">DISCO DURO 240GB 2.5" KINGSTON SSD</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">5</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">5</field>
+    <field name="caracteristiques" type="TextField">DISCO DURO 240GB 2.5" KINGSTON SSD SATA3 V300 SERIES</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/DISCO_DURO_240GB_KINGSTON_SSD_01GMjaL.jpg</field>
+    <field name="preu" type="DecimalField">67.08</field>
+    <field name="stock" type="IntegerField">57</field>
+  </object>
+  <object model="productes.producte" pk="21">
+    <field name="nom" type="CharField">DISCO DURO 240GB 2.5" KINGSTON SSD</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">5</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">5</field>
+    <field name="caracteristiques" type="TextField">DISCO DURO 240GB 2.5" KINGSTON SSD SATA3 HYPERX SAVAGE</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/DISCO_DURO_240GB_KINGSTON_SSD_HYPERX_SAVAGE.jpg</field>
+    <field name="preu" type="DecimalField">92.15</field>
+    <field name="stock" type="IntegerField">4</field>
+  </object>
+  <object model="productes.producte" pk="22">
+    <field name="nom" type="CharField">REGRABADORA LG DVD-R/+RW</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">8</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">6</field>
+    <field name="caracteristiques" type="TextField">REGRABADORA LG DVD-R/+RW GP57EB40 USB 2.0 SLIM EXTERNA NEGRA</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/REGRABADORA_LG_DVD-RRW.jpg</field>
+    <field name="preu" type="DecimalField">29.45</field>
+    <field name="stock" type="IntegerField">7</field>
+  </object>
+  <object model="productes.producte" pk="23">
+    <field name="nom" type="CharField">REGRABADORA LG DVD-R/+RW</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">8</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">6</field>
+    <field name="caracteristiques" type="TextField">REGRABADORA LG DVD-R/+RW GH24NSB0 24X SATA NEGRA OEM</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/REGRABADORA_LG_DVD-RRW_GH24NSB0.jpg</field>
+    <field name="preu" type="DecimalField">13.24</field>
+    <field name="stock" type="IntegerField">33</field>
+  </object>
+  <object model="productes.producte" pk="24">
+    <field name="nom" type="CharField">TARJETA GRAFICA 2GB GIGABYTE GT730</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">9</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">8</field>
+    <field name="caracteristiques" type="TextField">TARJETA GRAFICA 2GB GIGABYTE GT730 PCX DDR3 HDMI</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/TARJETA_GRAFICA_2GB_GIGABYTE_GT730.jpg</field>
+    <field name="preu" type="DecimalField">70.16</field>
+    <field name="stock" type="IntegerField">742</field>
+  </object>
+  <object model="productes.producte" pk="25">
+    <field name="nom" type="CharField">TARJETA GRAFICA 4GB ASUS GTX960</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">2</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">8</field>
+    <field name="caracteristiques" type="TextField">TARJETA GRAFICA 4GB ASUS GTX960 DIRECTCUII OC PCX3.0 DDR5 HDMI</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/TARJETA_GRAFICA_4GB_ASUS_GTX960.jpg</field>
+    <field name="preu" type="DecimalField">236.62</field>
+    <field name="stock" type="IntegerField">54</field>
+  </object>
+  <object model="productes.producte" pk="26">
+    <field name="nom" type="CharField">CORSAIR H110I GTX</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">11</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">11</field>
+    <field name="caracteristiques" type="TextField">KIT REFRIGERADOR LIQUIDO CORSAIR INTEL/AMD HYDRO SERIES H110I GTX</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/KIT_REFRIGERADOR_LIQUIDO_CORSAIR_HYDRO_SERIES_H110I_GTX.jpg</field>
+    <field name="preu" type="DecimalField">170.55</field>
+    <field name="stock" type="IntegerField">53</field>
+  </object>
+  <object model="productes.producte" pk="27">
+    <field name="nom" type="CharField">Corsair RM850</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">11</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">13</field>
+    <field name="caracteristiques" type="TextField">Fuente de alimentación completamente modular de 850W con certificación 80 PLUS® Gold</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/Corsair_RM850.jpg</field>
+    <field name="preu" type="DecimalField">190.95</field>
+    <field name="stock" type="IntegerField">2</field>
+  </object>
+  <object model="productes.producte" pk="28">
+    <field name="nom" type="CharField">Phantom 820 - Matte Black</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">10</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">12</field>
+    <field name="caracteristiques" type="TextField">Phantom 820 - Matte Black</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/Phantom_820_-_Matte_Black.jpg</field>
+    <field name="preu" type="DecimalField">250.00</field>
+    <field name="stock" type="IntegerField">5</field>
+  </object>
+  <object model="productes.producte" pk="29">
+    <field name="nom" type="CharField">Phantom 820 - Gunmetal</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">10</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">12</field>
+    <field name="caracteristiques" type="TextField">Phantom 820 - Gunmetal</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/Phantom_820_-_Gunmetal.jpg</field>
+    <field name="preu" type="DecimalField">250.00</field>
+    <field name="stock" type="IntegerField">5</field>
+  </object>
+  <object model="productes.producte" pk="30">
+    <field name="nom" type="CharField">Phantom 820 - White</field>
+    <field name="marca" rel="ManyToOneRel" to="productes.marca_producte">10</field>
+    <field name="tipus" rel="ManyToOneRel" to="productes.tipus_producte">12</field>
+    <field name="caracteristiques" type="TextField">Phantom 820 - White</field>
+    <field name="restriccio" type="TextField"></field>
+    <field name="imatge" type="FileField">productes/Phantom_820_-_White.jpg</field>
+    <field name="preu" type="DecimalField">250.00</field>
+    <field name="stock" type="IntegerField">5</field>
+  </object>
+  <object model="comandes.linia" pk="1">
+    <field name="id_comanda" rel="ManyToOneRel" to="comandes.comanda">1</field>
+    <field name="id_producte" rel="ManyToOneRel" to="productes.producte">26</field>
+    <field name="preu" type="DecimalField">170.55</field>
+    <field name="quantitat" type="IntegerField">1</field>
+    <field name="descompte" type="DecimalField">0.0</field>
+  </object>
+  <object model="comandes.linia" pk="2">
+    <field name="id_comanda" rel="ManyToOneRel" to="comandes.comanda">1</field>
+    <field name="id_producte" rel="ManyToOneRel" to="productes.producte">27</field>
+    <field name="preu" type="DecimalField">190.95</field>
+    <field name="quantitat" type="IntegerField">1</field>
+    <field name="descompte" type="DecimalField">0.0</field>
+  </object>
+  <object model="comandes.linia" pk="3">
+    <field name="id_comanda" rel="ManyToOneRel" to="comandes.comanda">1</field>
+    <field name="id_producte" rel="ManyToOneRel" to="productes.producte">15</field>
+    <field name="preu" type="DecimalField">35.71</field>
+    <field name="quantitat" type="IntegerField">2</field>
+    <field name="descompte" type="DecimalField">0.0</field>
+  </object>
+  <object model="comandes.linia" pk="4">
+    <field name="id_comanda" rel="ManyToOneRel" to="comandes.comanda">1</field>
+    <field name="id_producte" rel="ManyToOneRel" to="productes.producte">21</field>
+    <field name="preu" type="DecimalField">92.15</field>
+    <field name="quantitat" type="IntegerField">1</field>
+    <field name="descompte" type="DecimalField">0.0</field>
+  </object>
+  <object model="comandes.linia" pk="5">
+    <field name="id_comanda" rel="ManyToOneRel" to="comandes.comanda">1</field>
+    <field name="id_producte" rel="ManyToOneRel" to="productes.producte">23</field>
+    <field name="preu" type="DecimalField">13.24</field>
+    <field name="quantitat" type="IntegerField">1</field>
+    <field name="descompte" type="DecimalField">0.0</field>
+  </object>
+  <object model="comandes.linia" pk="6">
+    <field name="id_comanda" rel="ManyToOneRel" to="comandes.comanda">1</field>
+    <field name="id_producte" rel="ManyToOneRel" to="productes.producte">18</field>
+    <field name="preu" type="DecimalField">109.07</field>
+    <field name="quantitat" type="IntegerField">1</field>
+    <field name="descompte" type="DecimalField">0.0</field>
+  </object>
+  <object model="comandes.linia" pk="7">
+    <field name="id_comanda" rel="ManyToOneRel" to="comandes.comanda">1</field>
+    <field name="id_producte" rel="ManyToOneRel" to="productes.producte">3</field>
+    <field name="preu" type="DecimalField">289.46</field>
+    <field name="quantitat" type="IntegerField">1</field>
+    <field name="descompte" type="DecimalField">0.0</field>
+  </object>
+  <object model="comandes.linia" pk="8">
+    <field name="id_comanda" rel="ManyToOneRel" to="comandes.comanda">1</field>
+    <field name="id_producte" rel="ManyToOneRel" to="productes.producte">9</field>
+    <field name="preu" type="DecimalField">401.59</field>
+    <field name="quantitat" type="IntegerField">1</field>
+    <field name="descompte" type="DecimalField">0.0</field>
+  </object>
+  <object model="comandes.linia" pk="9">
+    <field name="id_comanda" rel="ManyToOneRel" to="comandes.comanda">2</field>
+    <field name="id_producte" rel="ManyToOneRel" to="productes.producte">1</field>
+    <field name="preu" type="DecimalField">73.60</field>
+    <field name="quantitat" type="IntegerField">3</field>
+    <field name="descompte" type="DecimalField">0.0</field>
+  </object>
+  <object model="comandes.linia" pk="10">
+    <field name="id_comanda" rel="ManyToOneRel" to="comandes.comanda">3</field>
+    <field name="id_producte" rel="ManyToOneRel" to="productes.producte">1</field>
+    <field name="preu" type="DecimalField">73.60</field>
+    <field name="quantitat" type="IntegerField">3</field>
+    <field name="descompte" type="DecimalField">0.0</field>
+  </object>
+  <object model="comandes.linia" pk="11">
+    <field name="id_comanda" rel="ManyToOneRel" to="comandes.comanda">3</field>
+    <field name="id_producte" rel="ManyToOneRel" to="productes.producte">9</field>
+    <field name="preu" type="DecimalField">401.59</field>
+    <field name="quantitat" type="IntegerField">2</field>
+    <field name="descompte" type="DecimalField">0.0</field>
+  </object>
+  <object model="comandes.linia" pk="12">
+    <field name="id_comanda" rel="ManyToOneRel" to="comandes.comanda">3</field>
+    <field name="id_producte" rel="ManyToOneRel" to="productes.producte">3</field>
+    <field name="preu" type="DecimalField">289.46</field>
+    <field name="quantitat" type="IntegerField">2</field>
+    <field name="descompte" type="DecimalField">0.0</field>
+  </object>
+  <object model="comandes.linia" pk="13">
+    <field name="id_comanda" rel="ManyToOneRel" to="comandes.comanda">3</field>
+    <field name="id_producte" rel="ManyToOneRel" to="productes.producte">2</field>
+    <field name="preu" type="DecimalField">45.46</field>
+    <field name="quantitat" type="IntegerField">1</field>
+    <field name="descompte" type="DecimalField">0.0</field>
+  </object>
+  <object model="comandes.linia" pk="14">
+    <field name="id_comanda" rel="ManyToOneRel" to="comandes.comanda">4</field>
+    <field name="id_producte" rel="ManyToOneRel" to="productes.producte">7</field>
+    <field name="preu" type="DecimalField">116.22</field>
+    <field name="quantitat" type="IntegerField">1</field>
+    <field name="descompte" type="DecimalField">0.0</field>
+  </object>
+  <object model="auth.permission" pk="1">
+    <field name="name" type="CharField">Can add log entry</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">1</field>
+    <field name="codename" type="CharField">add_logentry</field>
+  </object>
+  <object model="auth.permission" pk="2">
+    <field name="name" type="CharField">Can change log entry</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">1</field>
+    <field name="codename" type="CharField">change_logentry</field>
+  </object>
+  <object model="auth.permission" pk="3">
+    <field name="name" type="CharField">Can delete log entry</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">1</field>
+    <field name="codename" type="CharField">delete_logentry</field>
+  </object>
+  <object model="auth.permission" pk="4">
+    <field name="name" type="CharField">Can add permission</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">2</field>
+    <field name="codename" type="CharField">add_permission</field>
+  </object>
+  <object model="auth.permission" pk="5">
+    <field name="name" type="CharField">Can change permission</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">2</field>
+    <field name="codename" type="CharField">change_permission</field>
+  </object>
+  <object model="auth.permission" pk="6">
+    <field name="name" type="CharField">Can delete permission</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">2</field>
+    <field name="codename" type="CharField">delete_permission</field>
+  </object>
+  <object model="auth.permission" pk="7">
+    <field name="name" type="CharField">Can add group</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">3</field>
+    <field name="codename" type="CharField">add_group</field>
+  </object>
+  <object model="auth.permission" pk="8">
+    <field name="name" type="CharField">Can change group</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">3</field>
+    <field name="codename" type="CharField">change_group</field>
+  </object>
+  <object model="auth.permission" pk="9">
+    <field name="name" type="CharField">Can delete group</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">3</field>
+    <field name="codename" type="CharField">delete_group</field>
+  </object>
+  <object model="auth.permission" pk="10">
+    <field name="name" type="CharField">Can add user</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">4</field>
+    <field name="codename" type="CharField">add_user</field>
+  </object>
+  <object model="auth.permission" pk="11">
+    <field name="name" type="CharField">Can change user</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">4</field>
+    <field name="codename" type="CharField">change_user</field>
+  </object>
+  <object model="auth.permission" pk="12">
+    <field name="name" type="CharField">Can delete user</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">4</field>
+    <field name="codename" type="CharField">delete_user</field>
+  </object>
+  <object model="auth.permission" pk="13">
+    <field name="name" type="CharField">Can add content type</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">5</field>
+    <field name="codename" type="CharField">add_contenttype</field>
+  </object>
+  <object model="auth.permission" pk="14">
+    <field name="name" type="CharField">Can change content type</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">5</field>
+    <field name="codename" type="CharField">change_contenttype</field>
+  </object>
+  <object model="auth.permission" pk="15">
+    <field name="name" type="CharField">Can delete content type</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">5</field>
+    <field name="codename" type="CharField">delete_contenttype</field>
+  </object>
+  <object model="auth.permission" pk="16">
+    <field name="name" type="CharField">Can add session</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">6</field>
+    <field name="codename" type="CharField">add_session</field>
+  </object>
+  <object model="auth.permission" pk="17">
+    <field name="name" type="CharField">Can change session</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">6</field>
+    <field name="codename" type="CharField">change_session</field>
+  </object>
+  <object model="auth.permission" pk="18">
+    <field name="name" type="CharField">Can delete session</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">6</field>
+    <field name="codename" type="CharField">delete_session</field>
+  </object>
+  <object model="auth.permission" pk="19">
+    <field name="name" type="CharField">Can add tipus_ producte</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">7</field>
+    <field name="codename" type="CharField">add_tipus_producte</field>
+  </object>
+  <object model="auth.permission" pk="20">
+    <field name="name" type="CharField">Can change tipus_ producte</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">7</field>
+    <field name="codename" type="CharField">change_tipus_producte</field>
+  </object>
+  <object model="auth.permission" pk="21">
+    <field name="name" type="CharField">Can delete tipus_ producte</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">7</field>
+    <field name="codename" type="CharField">delete_tipus_producte</field>
+  </object>
+  <object model="auth.permission" pk="22">
+    <field name="name" type="CharField">Can add marca_ producte</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">8</field>
+    <field name="codename" type="CharField">add_marca_producte</field>
+  </object>
+  <object model="auth.permission" pk="23">
+    <field name="name" type="CharField">Can change marca_ producte</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">8</field>
+    <field name="codename" type="CharField">change_marca_producte</field>
+  </object>
+  <object model="auth.permission" pk="24">
+    <field name="name" type="CharField">Can delete marca_ producte</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">8</field>
+    <field name="codename" type="CharField">delete_marca_producte</field>
+  </object>
+  <object model="auth.permission" pk="25">
+    <field name="name" type="CharField">Can add producte</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">9</field>
+    <field name="codename" type="CharField">add_producte</field>
+  </object>
+  <object model="auth.permission" pk="26">
+    <field name="name" type="CharField">Can change producte</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">9</field>
+    <field name="codename" type="CharField">change_producte</field>
+  </object>
+  <object model="auth.permission" pk="27">
+    <field name="name" type="CharField">Can delete producte</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">9</field>
+    <field name="codename" type="CharField">delete_producte</field>
+  </object>
+  <object model="auth.permission" pk="28">
+    <field name="name" type="CharField">Can add linia</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">10</field>
+    <field name="codename" type="CharField">add_linia</field>
+  </object>
+  <object model="auth.permission" pk="29">
+    <field name="name" type="CharField">Can change linia</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">10</field>
+    <field name="codename" type="CharField">change_linia</field>
+  </object>
+  <object model="auth.permission" pk="30">
+    <field name="name" type="CharField">Can delete linia</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">10</field>
+    <field name="codename" type="CharField">delete_linia</field>
+  </object>
+  <object model="auth.permission" pk="31">
+    <field name="name" type="CharField">Can add comanda</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">11</field>
+    <field name="codename" type="CharField">add_comanda</field>
+  </object>
+  <object model="auth.permission" pk="32">
+    <field name="name" type="CharField">Can change comanda</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">11</field>
+    <field name="codename" type="CharField">change_comanda</field>
+  </object>
+  <object model="auth.permission" pk="33">
+    <field name="name" type="CharField">Can delete comanda</field>
+    <field name="content_type" rel="ManyToOneRel" to="contenttypes.contenttype">11</field>
+    <field name="codename" type="CharField">delete_comanda</field>
+  </object>
+  <object model="auth.user" pk="1">
+    <field name="password" type="CharField">pbkdf2_sha256$24000$GYXt0akhiCta$5wi813QPCmjeM1UFztgOT2idN9ueKVnCjXdXNyHXNoI=</field>
+    <field name="last_login" type="DateTimeField">2016-05-24T08:18:34+00:00</field>
+    <field name="is_superuser" type="BooleanField">False</field>
+    <field name="username" type="CharField">admin</field>
+    <field name="first_name" type="CharField"></field>
+    <field name="last_name" type="CharField"></field>
+    <field name="email" type="CharField">admin@admin.com</field>
+    <field name="is_staff" type="BooleanField">False</field>
+    <field name="is_active" type="BooleanField">True</field>
+    <field name="date_joined" type="DateTimeField">2016-05-18T09:23:50+00:00</field>
+    <field name="groups" rel="ManyToManyRel" to="auth.group"></field>
+    <field name="user_permissions" rel="ManyToManyRel" to="auth.permission"></field>
+  </object>
+  <object model="auth.user" pk="2">
+    <field name="password" type="CharField">pbkdf2_sha256$24000$qtdYpbfht0ag$qPuHvVb8VbHRHFywNOBlSsn5+YdzoznVVh4b/d8yf30=</field>
+    <field name="last_login" type="DateTimeField">2016-05-20T16:15:37+00:00</field>
+    <field name="is_superuser" type="BooleanField">False</field>
+    <field name="username" type="CharField">andreu</field>
+    <field name="first_name" type="CharField"></field>
+    <field name="last_name" type="CharField"></field>
+    <field name="email" type="CharField">andreu@andreu.com</field>
+    <field name="is_staff" type="BooleanField">False</field>
+    <field name="is_active" type="BooleanField">True</field>
+    <field name="date_joined" type="DateTimeField">2016-05-18T17:43:11+00:00</field>
+    <field name="groups" rel="ManyToManyRel" to="auth.group"></field>
+    <field name="user_permissions" rel="ManyToManyRel" to="auth.permission"></field>
+  </object>
+  <object model="comandes.comanda" pk="1">
+    <field name="data" type="DateField">2016-05-18</field>
+    <field name="usuari" rel="ManyToOneRel" to="auth.user">2</field>
+    <field name="estat" type="CharField">R</field>
+  </object>
+  <object model="comandes.comanda" pk="2">
+    <field name="data" type="DateField">2016-05-19</field>
+    <field name="usuari" rel="ManyToOneRel" to="auth.user">2</field>
+    <field name="estat" type="CharField">R</field>
+  </object>
+  <object model="comandes.comanda" pk="3">
+    <field name="data" type="DateField">2016-05-19</field>
+    <field name="usuari" rel="ManyToOneRel" to="auth.user">2</field>
+    <field name="estat" type="CharField">R</field>
+  </object>
+  <object model="comandes.comanda" pk="4">
+    <field name="data" type="DateField">2016-05-20</field>
+    <field name="usuari" rel="ManyToOneRel" to="auth.user">2</field>
+    <field name="estat" type="CharField">R</field>
+  </object>
+</django-objects>
