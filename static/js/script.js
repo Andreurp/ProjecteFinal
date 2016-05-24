@@ -8,26 +8,4 @@ $(document).ready(function () {
     function eliminarAlertes() {
         var alertes = $(".alertes").slideUp();
     }
-
-    //$("#zoom_01").elevateZoom();
-    
-    //Numero productes en el carro
-
-    /*$('.afegir').on('click', function() {
-        var num = $('.badge').html();
-        num += 1;
-        $('.badge').html(num)
-
-    });*/
-
-
-
-    //Select stock
-
-    /*$('.selectpicker').change(function(){
-        var url = $('.afegir').attr('href')
-        var varlor = $('.selectpicker').val()
-
-        var url_final = url + varlor
-    });*/
 });
