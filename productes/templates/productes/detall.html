@@ -18,7 +18,7 @@
                             <div style="min-height: 300px">
                                 <img id="zoom_01" class="img-responsive" style="height: 300px; width: 100%" src="{{producte.imatge.url}}" data-zoom-image="{{producte.imatge.url}}"/>
                                 <script>
-                                    $('#zoom_01').elevateZoom();
+                                    $('#zoom_01').elevateZoom({ zoomType : "lens", lensShape : "round", lensSize : 200 })
                                 </script>
                             </div>
                         </div>
