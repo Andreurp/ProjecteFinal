@@ -34,9 +34,15 @@ def update_sessionPost(request):
             if 'carro' not in request.session:
                 request.session['carro'] = {}
 
-            request.session['carro'].update({form.cleaned_data['id_producte']: form.cleaned_data['quantitat']})
+            id = str(form.cleaned_data['id_producte'])
+            quantitat = form.cleaned_data['quantitat']
+
+            request.session['carro'].update({id:quantitat})
 
             messages.add_message(request, messages.SUCCESS, 'El producte ha sigut afegit correctament')
+        else:
+            messages.add_message(request, messages.ERROR, 'Problemes afegint el producte')
+
         return HttpResponseRedirect(reverse('producte:veure_productes'))
 
 
