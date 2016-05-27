@@ -20,9 +20,9 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="col-xs-12 col-md-10">
+            <div class="col-xs-12 col-md-10 filtr-container">
                {% for producte in productes %}
-                    <div class="producte col-xs-12 col-sm-6 col-md-4">
+                    <div class="producte col-xs-12 col-sm-6 col-md-4 filtr-item" data-category="{{ producte.id_producte }}" data-sort="{{ producte.nom }}">
                         <div class="thumbnail">
                             <div style="min-height: 150px">
                                 <img class="img-responsive" style="height: 230px; width: 100%" src="{{producte.imatge.url}}">

@@ -8,4 +8,10 @@ $(document).ready(function () {
     function eliminarAlertes() {
         var alertes = $(".alertes").slideUp();
     }
+
+    <!-- Kick off Filterizr -->
+    $(function () {
+        //Initialize filterizr with default options
+        $('.filtr-container').filterizr();
+    });
 });

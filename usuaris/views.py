@@ -30,7 +30,7 @@ def registrar(request):
             messages.success(request, 'Usuari Registrat!')
             return HttpResponseRedirect(reverse('login'))
         else:
-            messages.error(request, "Usuari no existent!")
+            messages.error(request, "Usuari ja existeix!")
     else:
 
         form = RegistForm()
