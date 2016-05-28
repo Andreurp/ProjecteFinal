@@ -55,10 +55,10 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <form class="navbar-form navbar-left" role="search">
-                            <div class="form-group search-row">
+                            <div class="form-group input-group search-row">
                                 <input type="text" class="form-control filtr-search" name="filtr-search" data-search placeholder="Cerca">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
                             </div>
-                            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                         </form>
                         {% ifequal user.username "admin" %}
                              <li><a href="{% url 'backup:fer_backups' %}"><span class="glyphicon glyphicon-hdd"></span> Backup BDD</a></li>
