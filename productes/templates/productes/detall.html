@@ -69,7 +69,7 @@
                             <div role="tabpanel" class="tab-pane active" id="Caracteristiques">No hi ha cap caracteristica d'aquest producte</div>
                         {% endif %}
                         {% if producte.restriccio %}
-                            <div role="tabpanel" class="tab-pane" id="Restriccions">Restriccions {{producte.restriccio | linebreaksbr }}</div>
+                            <div role="tabpanel" class="tab-pane" id="Restriccions">{{producte.restriccio | linebreaksbr }}</div>
                         {% else %}
                             <div role="tabpanel" class="tab-pane" id="Restriccions">No hi ha cap restricció d'aquest producte</div>
                         {% endif %}
