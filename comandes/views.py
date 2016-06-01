@@ -113,7 +113,7 @@ def comfimar_carro(request):
 @login_required
 def llista_comandes(request):
     tipus = Tipus_Producte.objects.all()
-    comandes = Comanda.objects.filter(usuari=request.user)
+    comandes = Comanda.objects.filter(usuari=request.user).order_by('-data')
     return render(request, 'comandes/llistaComandes.html', {'comandes':comandes,'tipus': tipus})
 
 @login_required
